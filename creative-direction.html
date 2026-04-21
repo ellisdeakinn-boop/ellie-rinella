@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Direction — Ellie Rinella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800;900&family=Courier+Prime:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+
+    /* ─── PROJECT GRID ─── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--black);
+      display: block;
+    }
+
+    .project-card:nth-child(even) { border-right: none; }
+
+    .project-card:hover { text-decoration: none; }
+
+    .project-image {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--light-gray);
+      position: relative;
+    }
+
+    .project-image > div {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-image > div { transform: scale(1.04); }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-image img { transform: scale(1.04); }
+
+    .project-body {
+      padding: 28px 32px 36px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-category {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: lowercase;
+      color: var(--gray);
+    }
+
+    .project-title {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      text-transform: lowercase;
+    }
+
+    .project-desc {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gray);
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+      max-width: 420px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 24px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+
+    .project-meta span {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: lowercase;
+      color: var(--gray);
+    }
+
+    .project-arrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: lowercase;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      margin-top: 8px;
+      align-self: flex-start;
+      transition: opacity 0.15s;
+    }
+
+    .project-card:hover .project-arrow { opacity: 0.5; }
+
+    /* ─── FEATURED (full-width) ─── */
+    .project-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-right: none;
+    }
+
+    .project-card.featured .project-image {
+      aspect-ratio: unset;
+      min-height: 480px;
+    }
+
+    .project-card.featured .project-body {
+      padding: 48px 48px;
+      border-top: none;
+      border-left: 1px solid var(--border);
+      justify-content: center;
+    }
+
+    .project-card.featured .project-title {
+      font-size: clamp(28px, 3vw, 44px);
+    }
+
+    /* ─── SERVICES BAR ─── */
+    .services-bar {
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+    }
+
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .service-item {
+      padding: 32px 32px;
+      border-right: 1px solid var(--border);
+    }
+
+    .service-item:last-child { border-right: none; }
+
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--gray);
+      margin-bottom: 14px;
+    }
+
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: lowercase;
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    /* ─── CTA ─── */
+    .cd-cta {
+      padding: 80px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .cd-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      margin-bottom: 16px;
+    }
+
+    .cd-cta p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--gray);
+      margin-bottom: 36px;
+    }
+
+    @media (max-width: 900px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card { border-right: none; }
+      .project-card.featured { grid-template-columns: 1fr; }
+      .project-card.featured .project-body { border-left: none; border-top: 1px solid var(--border); }
+      .project-card.featured .project-image { min-height: 300px; }
+      .services-list { grid-template-columns: 1fr 1fr; }
+      .service-item:nth-child(2) { border-right: none; }
+      .service-item:nth-child(3) { border-right: 1px solid var(--border); }
+      .service-item { border-top: 1px solid var(--border); }
+    }
+
+    @media (max-width: 600px) {
+      .services-list { grid-template-columns: 1fr; }
+      .service-item { border-right: none; }
+      .project-body { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-nav" id="mobileNav">
+    <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
+    <a href="about.html">about me</a>
+    <a href="collections.html">collections</a>
+    <a href="creative-direction.html">creative direction</a>
+    <a href="him.html">him</a>
+    <a href="contact.html">contact me</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">solideoglorea</a>
+      <nav class="primary">
+        <a href="about.html">about me</a>
+        <a href="collections.html">collections</a>
+        <a href="creative-direction.html" class="active">creative direction</a>
+        <a href="him.html">him</a>
+        <a href="contact.html">contact me</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">instagram</a>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">creative direction</p>
+    <h1 class="page-hero-title">the vision behind the image.</h1>
+  </div>
+
+  <div class="page-inner">
+
+    <!-- INTRO -->
+    <section style="padding: 48px 0; border-bottom: 1px solid var(--border);">
+      <div style="max-width: 680px;">
+        <p style="font-size:17px; line-height:1.85; color:#222; margin-bottom:20px;">
+          [Introduce your creative direction work in your own voice — what draws you to it, how it connects to your painting practice, and the kinds of projects you take on. 2–3 sentences.]
+        </p>
+        <p style="font-family:var(--font-mono); font-size:11px; color:var(--gray); letter-spacing:0.06em; line-height:1.9;">
+          available for brand shoots, editorial, campaign, and concept work. &nbsp;
+          <a href="contact.html" style="text-decoration:underline; color:var(--black);">inquire here.</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECT GRID -->
+    <section style="padding: 0; border: none;">
+      <div class="projects-grid">
+
+        <!-- FEATURED PROJECT -->
+        <div class="project-card featured reveal">
+          <div class="project-image">
+            <!-- <img src="images/cd-featured.jpg" alt="[Project Name]" /> -->
+            <div style="background: linear-gradient(145deg, #c9c3d6, #9e96b0);"></div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">featured project</span>
+            <h2 class="project-title">[Project Name]</h2>
+            <p class="project-desc">
+              [Brief description of the project — the brief, the concept, the outcome. What was the visual idea and how did you bring it to life? 2–3 sentences.]
+            </p>
+            <div class="project-meta">
+              <span>[Client / Brand]</span>
+              <span>[Year]</span>
+              <span>[Category — e.g. editorial / campaign]</span>
+            </div>
+            <span class="project-arrow">view project</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <!-- <img src="images/cd-2.jpg" alt="[Project Name]" /> -->
+            <div style="background: linear-gradient(145deg, #d6cfc4, #b8a99a);"></div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">[category]</span>
+            <h2 class="project-title">[Project Name]</h2>
+            <p class="project-desc">[Short description — concept, mood, and what your role was. 1–2 sentences.]</p>
+            <div class="project-meta">
+              <span>[Client]</span>
+              <span>[Year]</span>
+            </div>
+            <span class="project-arrow">view project</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <!-- <img src="images/cd-3.jpg" alt="[Project Name]" /> -->
+            <div style="background: linear-gradient(145deg, #d4c9be, #c2b4a6);"></div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">[category]</span>
+            <h2 class="project-title">[Project Name]</h2>
+            <p class="project-desc">[Short description — concept, mood, and what your role was. 1–2 sentences.]</p>
+            <div class="project-meta">
+              <span>[Client]</span>
+              <span>[Year]</span>
+            </div>
+            <span class="project-arrow">view project</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <!-- <img src="images/cd-4.jpg" alt="[Project Name]" /> -->
+            <div style="background: linear-gradient(145deg, #cad0d6, #a8b2bc);"></div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">[category]</span>
+            <h2 class="project-title">[Project Name]</h2>
+            <p class="project-desc">[Short description — concept, mood, and what your role was. 1–2 sentences.]</p>
+            <div class="project-meta">
+              <span>[Client]</span>
+              <span>[Year]</span>
+            </div>
+            <span class="project-arrow">view project</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <!-- <img src="images/cd-5.jpg" alt="[Project Name]" /> -->
+            <div style="background: linear-gradient(145deg, #e2d9c9, #cbbfa8);"></div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">[category]</span>
+            <h2 class="project-title">[Project Name]</h2>
+            <p class="project-desc">[Short description — concept, mood, and what your role was. 1–2 sentences.]</p>
+            <div class="project-meta">
+              <span>[Client]</span>
+              <span>[Year]</span>
+            </div>
+            <span class="project-arrow">view project</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 6 -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <!-- <img src="images/cd-6.jpg" alt="[Project Name]" /> -->
+            <div style="background: linear-gradient(145deg, #d9d2c6, #c2b8a3);"></div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">[category]</span>
+            <h2 class="project-title">[Project Name]</h2>
+            <p class="project-desc">[Short description — concept, mood, and what your role was. 1–2 sentences.]</p>
+            <div class="project-meta">
+              <span>[Client]</span>
+              <span>[Year]</span>
+            </div>
+            <span class="project-arrow">view project</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section style="padding:0; border:none;">
+      <div class="services-bar">
+        <span class="label">what i do</span>
+        <div class="services-list">
+          <div class="service-item reveal">
+            <p class="service-num">01.</p>
+            <h3 class="service-name">concept development</h3>
+            <p class="service-desc">Building the visual idea from the ground up — mood, narrative, references, and direction.</p>
+          </div>
+          <div class="service-item reveal">
+            <p class="service-num">02.</p>
+            <h3 class="service-name">art direction</h3>
+            <p class="service-desc">On-set direction for photo and video shoots — styling, composition, colour, and feel.</p>
+          </div>
+          <div class="service-item reveal">
+            <p class="service-num">03.</p>
+            <h3 class="service-name">brand identity</h3>
+            <p class="service-desc">Visual language for brands — palette, typography, photography style, and creative guidelines.</p>
+          </div>
+          <div class="service-item reveal">
+            <p class="service-num">04.</p>
+            <h3 class="service-name">editorial</h3>
+            <p class="service-desc">Concept and direction for editorial shoots, lookbooks, and campaign imagery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cd-cta reveal">
+      <h2>let's work together.</h2>
+      <p>available for freelance creative direction and consultation.</p>
+      <a href="contact.html" class="btn btn-fill">get in touch</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand-name">solideoglorea</span>
+        <p>Christian abstract art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
+      </div>
+      <div class="footer-col">
+        <h4>navigate</h4>
+        <a href="about.html">about me</a>
+        <a href="collections.html">collections</a>
+        <a href="creative-direction.html">creative direction</a>
+        <a href="him.html">him</a>
+        <a href="contact.html">contact me</a>
+      </div>
+      <div class="footer-col">
+        <h4>connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">instagram</a>
+        <a href="mailto:[your@email.com]">[your@email.com]</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ellie rinella 2025. all rights reserved.</p>
+    </div>
+  </footer>
+
+<script src="scroll.js"></script>
+</body>
+</html>
