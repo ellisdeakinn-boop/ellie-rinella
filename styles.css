@@ -77,11 +77,26 @@ nav.primary a {
 nav.primary a:hover,
 nav.primary a.active { opacity: 0.45; text-decoration: none; }
 
+.header-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .header-social a {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: lowercase;
+  display: flex;
+  align-items: center;
+  color: var(--black);
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.header-social a:hover { opacity: 1; text-decoration: none; }
+
+.header-social a svg {
+  display: block;
+  width: 17px;
+  height: 17px;
 }
 
 /* Mobile hamburger */
