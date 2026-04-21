@@ -53,7 +53,7 @@ header {
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.22em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   text-decoration: none;
 }
 
@@ -68,7 +68,7 @@ nav.primary a {
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   text-decoration: none;
   color: var(--black);
   transition: opacity 0.15s;
@@ -81,7 +81,7 @@ nav.primary a.active { opacity: 0.45; text-decoration: none; }
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 /* Mobile hamburger */
@@ -110,7 +110,7 @@ nav.primary a.active { opacity: 0.45; text-decoration: none; }
   font-family: var(--font-mono);
   font-size: 13px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 .mobile-nav .close-btn {
   position: absolute;
@@ -133,7 +133,7 @@ nav.primary a.active { opacity: 0.45; text-decoration: none; }
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.24em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--gray);
   margin-bottom: 20px;
 }
@@ -167,7 +167,7 @@ section:last-of-type { border-bottom: none; }
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 0.22em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--gray);
   margin-bottom: 16px;
   display: block;
@@ -189,7 +189,7 @@ h2.section-heading {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   padding: 14px 36px;
   border: 1px solid var(--black);
   background: transparent;
@@ -268,7 +268,7 @@ blockquote {
   font-family: var(--font-mono);
   font-size: 9px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   padding: 4px 9px;
 }
 .work-badge.sold { background: #666; }
@@ -301,7 +301,7 @@ blockquote {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.16em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -313,7 +313,7 @@ blockquote {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.22em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--gray);
   margin-bottom: 28px;
   padding-bottom: 14px;
@@ -331,7 +331,7 @@ label {
   gap: 7px;
   font-size: 10px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--gray);
 }
 
@@ -397,7 +397,7 @@ footer {
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.22em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--white);
   display: block;
   margin-bottom: 16px;
@@ -415,7 +415,7 @@ footer {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.2em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   margin-bottom: 18px;
   opacity: 0.4;
 }
@@ -443,7 +443,7 @@ footer {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   opacity: 0.3;
 }
 
