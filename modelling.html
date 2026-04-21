@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modelling — Ellie Rinella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800;900&family=Courier+Prime:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .model-card {
+      overflow: hidden;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .model-card:nth-child(3n) { border-right: none; }
+
+    .model-image {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--light-gray);
+    }
+
+    .model-image > div,
+    .model-image > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .model-card:hover .model-image > div,
+    .model-card:hover .model-image > img { transform: scale(1.04); }
+
+    .model-caption {
+      padding: 16px 20px 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .model-caption p {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--gray);
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-block {
+      padding: 28px 32px;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-block:last-child { border-right: none; }
+
+    .stat-block dt {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: var(--gray);
+      margin-bottom: 8px;
+    }
+
+    .stat-block dd {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: lowercase;
+    }
+
+    /* Experience list */
+    .exp-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+
+    .exp-item:nth-child(odd) { padding-right: 48px; }
+    .exp-item:nth-child(even) { padding-left: 48px; border-left: 1px solid var(--border); }
+
+    .exp-year {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--gray);
+    }
+
+    .exp-name {
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .exp-type {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gray);
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 900px) {
+      .model-grid { grid-template-columns: 1fr 1fr; }
+      .model-card:nth-child(3n) { border-right: 1px solid var(--border); }
+      .model-card:nth-child(2n) { border-right: none; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .stat-block:nth-child(2) { border-right: none; }
+      .stat-block:nth-child(3) { border-top: 1px solid var(--border); }
+      .stat-block:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+      .exp-list { grid-template-columns: 1fr; }
+      .exp-item:nth-child(even) { padding-left: 0; border-left: none; }
+      .exp-item:nth-child(odd) { padding-right: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .model-grid { grid-template-columns: 1fr; }
+      .model-card:nth-child(2n) { border-right: none; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-nav" id="mobileNav">
+    <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
+    <a href="about.html">about me</a>
+    <a href="collections.html">collections</a>
+    <a href="creative-direction.html">creative direction</a>
+    <a href="modelling.html">modelling</a>
+    <a href="him.html">him</a>
+    <a href="contact.html">contact me</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">solideoglorea</a>
+      <nav class="primary">
+        <a href="about.html">about me</a>
+        <a href="collections.html">collections</a>
+        <a href="creative-direction.html">creative direction</a>
+        <a href="modelling.html" class="active">modelling</a>
+        <a href="him.html">him</a>
+        <a href="contact.html">contact me</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">@solideoglorea</a>
+        <a href="https://www.instagram.com/ellierinella/" target="_blank">@ellierinella</a>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">modelling</p>
+    <h1 class="page-hero-title">ellie rinella.</h1>
+  </div>
+
+  <!-- STATS BAR -->
+  <dl class="stats-bar">
+    <div class="stat-block reveal">
+      <dt>height</dt>
+      <dd>5ft 9in</dd>
+    </div>
+    <div class="stat-block reveal">
+      <dt>location</dt>
+      <dd>Phoenix, AZ</dd>
+    </div>
+    <div class="stat-block reveal">
+      <dt>available for</dt>
+      <dd>commercial, editorial, brand</dd>
+    </div>
+    <div class="stat-block reveal">
+      <dt>travel</dt>
+      <dd>available</dd>
+    </div>
+  </dl>
+
+  <div class="page-inner">
+
+    <!-- PORTFOLIO GRID -->
+    <section style="padding: 0; border: none;">
+      <div class="model-grid">
+
+        <div class="model-card reveal">
+          <div class="model-image">
+            <!-- <img src="images/model-1.jpg" alt="Ellie Rinella" /> -->
+            <div style="background: linear-gradient(160deg, #e8e0d5, #c8bfb0);"></div>
+          </div>
+          <div class="model-caption">
+            <p>[shoot type] — [client / photographer]</p>
+          </div>
+        </div>
+
+        <div class="model-card reveal">
+          <div class="model-image">
+            <!-- <img src="images/model-2.jpg" alt="Ellie Rinella" /> -->
+            <div style="background: linear-gradient(160deg, #d6cfc4, #b8a99a);"></div>
+          </div>
+          <div class="model-caption">
+            <p>[shoot type] — [client / photographer]</p>
+          </div>
+        </div>
+
+        <div class="model-card reveal">
+          <div class="model-image">
+            <!-- <img src="images/model-3.jpg" alt="Ellie Rinella" /> -->
+            <div style="background: linear-gradient(160deg, #d5cdc3, #b0a898);"></div>
+          </div>
+          <div class="model-caption">
+            <p>[shoot type] — [client / photographer]</p>
+          </div>
+        </div>
+
+        <div class="model-card reveal">
+          <div class="model-image">
+            <!-- <img src="images/model-4.jpg" alt="Ellie Rinella" /> -->
+            <div style="background: linear-gradient(160deg, #cad0d6, #a8b2bc);"></div>
+          </div>
+          <div class="model-caption">
+            <p>[shoot type] — [client / photographer]</p>
+          </div>
+        </div>
+
+        <div class="model-card reveal">
+          <div class="model-image">
+            <!-- <img src="images/model-5.jpg" alt="Ellie Rinella" /> -->
+            <div style="background: linear-gradient(160deg, #c9c3d6, #9e96b0);"></div>
+          </div>
+          <div class="model-caption">
+            <p>[shoot type] — [client / photographer]</p>
+          </div>
+        </div>
+
+        <div class="model-card reveal">
+          <div class="model-image">
+            <!-- <img src="images/model-6.jpg" alt="Ellie Rinella" /> -->
+            <div style="background: linear-gradient(160deg, #d9d2c6, #c2b8a3);"></div>
+          </div>
+          <div class="model-caption">
+            <p>[shoot type] — [client / photographer]</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+      <span class="label">experience</span>
+      <div class="exp-list stagger">
+        <div class="exp-item">
+          <span class="exp-year">[year]</span>
+          <div>
+            <p class="exp-name">[Client / Brand]</p>
+            <p class="exp-type">[shoot type]</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-year">[year]</span>
+          <div>
+            <p class="exp-name">[Client / Brand]</p>
+            <p class="exp-type">[shoot type]</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-year">[year]</span>
+          <div>
+            <p class="exp-name">[Client / Brand]</p>
+            <p class="exp-type">[shoot type]</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-year">[year]</span>
+          <div>
+            <p class="exp-name">[Client / Brand]</p>
+            <p class="exp-type">[shoot type]</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-year">[year]</span>
+          <div>
+            <p class="exp-name">[Client / Brand]</p>
+            <p class="exp-type">[shoot type]</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <span class="exp-year">[year]</span>
+          <div>
+            <p class="exp-name">[Client / Brand]</p>
+            <p class="exp-type">[shoot type]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING CTA -->
+    <section style="text-align:center; padding: 80px 0;">
+      <span class="label" style="text-align:center; display:block;">bookings</span>
+      <h2 class="section-heading" style="text-align:center; max-width:520px; margin: 0 auto 16px;">available for the right project.</h2>
+      <p style="font-family:var(--font-mono); font-size:11px; color:var(--gray); margin-bottom:36px; letter-spacing:0.06em;">commercial, editorial, and brand. phoenix, az — travel available.</p>
+      <a href="contact-modelling.html" class="btn btn-fill">send a booking inquiry</a>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand-name">solideoglorea</span>
+        <p>Christian abstract art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
+      </div>
+      <div class="footer-col">
+        <h4>navigate</h4>
+        <a href="about.html">about me</a>
+        <a href="collections.html">collections</a>
+        <a href="creative-direction.html">creative direction</a>
+        <a href="modelling.html">modelling</a>
+        <a href="him.html">him</a>
+        <a href="contact.html">contact me</a>
+      </div>
+      <div class="footer-col">
+        <h4>connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">@solideoglorea</a>
+        <a href="https://www.instagram.com/ellierinella/" target="_blank">@ellierinella</a>
+        <a href="mailto:[your@email.com]">[your@email.com]</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ellie rinella 2025. all rights reserved.</p>
+    </div>
+  </footer>
+
+<script src="scroll.js"></script>
+</body>
+</html>
