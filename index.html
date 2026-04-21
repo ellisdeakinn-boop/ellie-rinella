@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ellie Rinella — Artist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --gray: #888888;
+      --light-gray: #f4f3f1;
+      --warm: #f9f7f4;
+      --border: #e2e0dc;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: 20px;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    nav.primary {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    nav.primary a {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+      transition: opacity 0.15s;
+    }
+
+    nav.primary a:hover { opacity: 0.45; text-decoration: none; }
+
+    .header-social a {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Mobile hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--black);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--white);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      letter-spacing: 0.02em;
+    }
+
+    .mobile-nav .close-btn {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      font-size: 28px;
+      cursor: pointer;
+      font-weight: 300;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--warm);
+      padding: 100px 40px 80px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(56px, 10vw, 112px);
+      font-weight: 400;
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(16px, 2.5vw, 22px);
+      color: var(--gray);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.5;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      border: 1px solid var(--black);
+      padding: 13px 36px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    .page-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 40px;
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 40px;
+    }
+
+    /* ─── ABOUT ME ─── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-image {
+      aspect-ratio: 4/5;
+      background: var(--light-gray);
+      overflow: hidden;
+    }
+
+    /* Placeholder gradient — replace with <img> tag */
+    .about-image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #e8e0d5 0%, #c8bfb0 100%);
+    }
+
+    .about-content {}
+
+    .about-content p {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      line-height: 1.75;
+      margin-bottom: 24px;
+      color: #222;
+    }
+
+    blockquote {
+      border-left: 2px solid var(--black);
+      padding-left: 24px;
+      margin: 36px 0;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 21px;
+      line-height: 1.55;
+    }
+
+    .about-meta {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .about-meta-item {
+      display: flex;
+      gap: 20px;
+      align-items: baseline;
+    }
+
+    .about-meta-item dt {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      min-width: 80px;
+    }
+
+    .about-meta-item dd {
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    /* ─── COLLECTIONS ─── */
+    .collections-filters {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--gray);
+      border-bottom: 1px solid transparent;
+      transition: all 0.15s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      color: var(--black);
+      border-bottom-color: var(--black);
+    }
+
+    .collection-group { margin-bottom: 64px; }
+
+    .collection-group-title {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 48px 32px;
+    }
+
+    .works-grid.small {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 32px 24px;
+    }
+
+    .work-card { cursor: pointer; }
+
+    .work-image {
+      background: var(--light-gray);
+      aspect-ratio: 3/4;
+      margin-bottom: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .works-grid.small .work-image { aspect-ratio: 1/1; }
+
+    .work-image > div {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .work-card:hover .work-image > div { transform: scale(1.04); }
+
+    .work-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 9px;
+    }
+
+    .work-badge.sold { background: #666; }
+
+    .work-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-style: italic;
+      margin-bottom: 5px;
+    }
+
+    .work-meta {
+      font-size: 12px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .work-price {
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      margin-bottom: 10px;
+    }
+
+    .work-link {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ─── HIM ─── */
+    .him-section {
+      background: var(--warm);
+      margin: 0 -40px;
+      padding: 80px 40px;
+    }
+
+    .him-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .him-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .him-text p {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      color: #2a2a2a;
+    }
+
+    .him-verse {
+      margin-top: 40px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .him-verse p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .him-verse cite {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+      font-style: normal;
+    }
+
+    .him-image {
+      aspect-ratio: 4/5;
+      background: var(--light-gray);
+      overflow: hidden;
+    }
+
+    .him-image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #d5cdc3 0%, #b0a898 100%);
+    }
+
+    /* ─── CONTACT / CUSTOMS ─── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-intro {}
+
+    .contact-intro p {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      line-height: 1.75;
+      margin-bottom: 20px;
+      max-width: 440px;
+    }
+
+    .contact-details {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-details p, .contact-details a {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    .contact-details a:hover { color: var(--black); text-decoration: none; }
+
+    form { display: flex; flex-direction: column; gap: 20px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    input, textarea, select {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--black);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 0;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+      -webkit-appearance: none;
+    }
+
+    input:focus, textarea:focus, select:focus { border-color: var(--black); }
+
+    textarea { resize: vertical; min-height: 130px; }
+
+    select { cursor: pointer; }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--gray);
+      text-transform: none;
+      letter-spacing: 0;
+      line-height: 1.5;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      border-bottom: none;
+      padding: 0;
+      margin-top: 2px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 15px 40px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      align-self: flex-start;
+    }
+
+    .btn:hover { opacity: 0.65; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 64px 40px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .footer-brand .logo {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      color: var(--white);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.8;
+      opacity: 0.5;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      opacity: 0.4;
+    }
+
+    .footer-col a, .footer-col p {
+      display: block;
+      font-size: 13px;
+      line-height: 2;
+      opacity: 0.65;
+    }
+
+    .footer-col a:hover { opacity: 1; text-decoration: none; }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.35;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .him-grid { grid-template-columns: 1fr; gap: 48px; }
+      .him-image { display: none; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner { padding: 0 20px; }
+      nav.primary { display: none; }
+      .header-social { display: none; }
+      .hamburger { display: flex; }
+      .hero { padding: 72px 20px 56px; }
+      .page-inner { padding: 0 20px; }
+      section { padding: 56px 0; }
+      .him-section { margin: 0 -20px; padding: 56px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+      footer { padding: 48px 20px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── MOBILE NAV OVERLAY ─── -->
+  <div class="mobile-nav" id="mobileNav">
+    <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
+    <a href="#about" onclick="document.getElementById('mobileNav').classList.remove('open')">About Me</a>
+    <a href="#collections" onclick="document.getElementById('mobileNav').classList.remove('open')">Collections</a>
+    <a href="#him" onclick="document.getElementById('mobileNav').classList.remove('open')">Him</a>
+    <a href="#contact" onclick="document.getElementById('mobileNav').classList.remove('open')">Contact Me</a>
+  </div>
+
+  <!-- ─── HEADER ─── -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">Ellie Rinella</a>
+      <nav class="primary">
+        <a href="#about">About Me</a>
+        <a href="#collections">Collections</a>
+        <a href="#him">Him</a>
+        <a href="#contact">Contact Me</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">Instagram</a>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <div class="hero">
+    <p class="hero-eyebrow">Abstract Religious Art</p>
+    <h1 class="hero-title">Ellie Rinella</h1>
+    <p class="hero-tagline">Painting what cannot be said — only felt.</p>
+    <a href="#collections" class="hero-cta">View Collections</a>
+  </div>
+
+  <!-- ─── PAGE CONTENT ─── -->
+  <div class="page-inner">
+
+    <!-- ABOUT ME -->
+    <section id="about">
+      <p class="section-label">About Me</p>
+      <div class="about-grid">
+
+        <div class="about-image">
+          <!-- Replace this div with: <img src="ellie-portrait.jpg" alt="Ellie Rinella" /> -->
+          <div class="about-image-placeholder"></div>
+        </div>
+
+        <div class="about-content">
+          <h2 class="section-heading">Painting as a form of prayer.</h2>
+          <p>
+            [Introduce yourself in your own voice — where you're from, when you started painting,
+            and what brought you to abstract religious work. Keep it personal and grounded. 3 sentences.]
+          </p>
+          <p>
+            [Talk about what drives your practice — the spiritual dimension, the process, the
+            feeling you're chasing in the studio. What does a typical painting session feel like
+            for you? 2-3 sentences.]
+          </p>
+          <blockquote>
+            "[Your own quote about what painting means to you — something personal and honest.]"
+          </blockquote>
+          <p>
+            [Close with what you hope people feel when they see your work — and a brief note
+            about commissions or the kind of homes/spaces your paintings live in. 2 sentences.]
+          </p>
+
+          <dl class="about-meta">
+            <div class="about-meta-item">
+              <dt>Based in</dt>
+              <dd>[City, State]</dd>
+            </div>
+            <div class="about-meta-item">
+              <dt>Medium</dt>
+              <dd>Oil, acrylic, mixed media on canvas and panel</dd>
+            </div>
+            <div class="about-meta-item">
+              <dt>Focus</dt>
+              <dd>Abstract religious and spiritual painting</dd>
+            </div>
+            <div class="about-meta-item">
+              <dt>Commissions</dt>
+              <dd>Open — see Contact below</dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section id="collections">
+      <p class="section-label">Collections</p>
+      <h2 class="section-heading">Available Works</h2>
+
+      <!-- Collection One -->
+      <div class="collection-group">
+        <p class="collection-group-title">[Collection Name — e.g. "Lament" or "The Hours"]</p>
+        <div class="works-grid">
+
+          <div class="work-card">
+            <div class="work-image">
+              <!-- <img src="works/painting-1.jpg" alt="[Title]" /> -->
+              <div style="background:linear-gradient(145deg,#d6cfc4,#b8a99a);"></div>
+            </div>
+            <p class="work-title">[Painting Title One]</p>
+            <p class="work-meta">72 &times; 96 in. &nbsp; Oil on canvas &nbsp; 2024</p>
+            <p class="work-price">$[Price]</p>
+            <a href="#contact" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#c9c3d6,#9e96b0);"></div>
+            </div>
+            <p class="work-title">[Painting Title Two]</p>
+            <p class="work-meta">60 &times; 48 in. &nbsp; Oil on linen &nbsp; 2024</p>
+            <p class="work-price">$[Price]</p>
+            <a href="#contact" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d4c9be,#c2b4a6);"></div>
+            </div>
+            <p class="work-title">[Painting Title Three]</p>
+            <p class="work-meta">48 &times; 36 in. &nbsp; Acrylic, oil on panel &nbsp; 2025</p>
+            <p class="work-price">$[Price]</p>
+            <a href="#contact" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#e2d9c9,#cbbfa8);"></div>
+              <span class="work-badge sold">Sold</span>
+            </div>
+            <p class="work-title">[Painting Title Four]</p>
+            <p class="work-meta">36 &times; 36 in. &nbsp; Oil on canvas &nbsp; 2024</p>
+            <p class="work-price" style="color:var(--gray);">Sold</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Collection Two -->
+      <div class="collection-group">
+        <p class="collection-group-title">[Second Collection Name — e.g. "Advent" or "Studies in Light"]</p>
+        <div class="works-grid">
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#cad0d6,#a8b2bc);"></div>
+            </div>
+            <p class="work-title">[Painting Title Five]</p>
+            <p class="work-meta">30 &times; 24 in. &nbsp; Oil on linen &nbsp; 2025</p>
+            <p class="work-price">$[Price]</p>
+            <a href="#contact" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d9d2c6,#c2b8a3);"></div>
+            </div>
+            <p class="work-title">[Painting Title Six]</p>
+            <p class="work-meta">30 &times; 24 in. &nbsp; Oil on canvas &nbsp; 2025</p>
+            <p class="work-price">$[Price]</p>
+            <a href="#contact" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d5cec5,#bdb5a8);"></div>
+            </div>
+            <p class="work-title">[Painting Title Seven]</p>
+            <p class="work-meta">24 &times; 20 in. &nbsp; Oil, oil stick on panel &nbsp; 2025</p>
+            <p class="work-price">$[Price]</p>
+            <a href="#contact" class="work-link">Inquire</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Small works -->
+      <div class="collection-group">
+        <p class="collection-group-title">Works on Paper &amp; Small Format</p>
+        <div class="works-grid small">
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d8d0c8,#b8b0a4);"></div>
+            </div>
+            <p class="work-title">[Study One]</p>
+            <p class="work-meta">14 &times; 10 in. &nbsp; Gouache on paper</p>
+            <p class="work-price">$[Price]</p>
+            <a href="#contact" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d0cdd8,#b0adb8);"></div>
+            </div>
+            <p class="work-title">[Study Two]</p>
+            <p class="work-meta">14 &times; 10 in. &nbsp; Ink, gouache on paper</p>
+            <p class="work-price">$[Price]</p>
+            <a href="#contact" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d4cfc6,#b4afa6);"></div>
+            </div>
+            <p class="work-title">[Study Three]</p>
+            <p class="work-meta">12 &times; 9 in. &nbsp; Watercolor, oil stick</p>
+            <p class="work-price">$[Price]</p>
+            <a href="#contact" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#ddd7cc,#c4bfb2);"></div>
+            </div>
+            <p class="work-title">[Study Four]</p>
+            <p class="work-meta">10 &times; 8 in. &nbsp; Oil on panel</p>
+            <p class="work-price">$[Price]</p>
+            <a href="#contact" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d2cec8,#b8b3aa);"></div>
+            </div>
+            <p class="work-title">[Study Five]</p>
+            <p class="work-meta">10 &times; 8 in. &nbsp; Acrylic on panel</p>
+            <p class="work-price">$[Price]</p>
+            <a href="#contact" class="work-link">Inquire</a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div><!-- /page-inner -->
+
+  <!-- ─── HIM ─── -->
+  <div class="him-section" id="him">
+    <div class="him-inner">
+      <p class="section-label">Him</p>
+      <div class="him-grid">
+
+        <div class="him-text">
+          <h2 class="section-heading">The reason for all of it.</h2>
+          <p>
+            [Write about your relationship with God and how it is the foundation of your art.
+            This section is personal — share what faith means to you and why it shows up in
+            everything you paint. Be honest, not formal. 3-4 sentences.]
+          </p>
+          <p>
+            [Go deeper into what it feels like to paint in response to God — the act of creating
+            as an act of worship, or surrender, or listening. What do you discover in the process
+            that you couldn't find any other way? 3-4 sentences.]
+          </p>
+          <p>
+            [Close with what you hope people who don't share your faith still find in the work —
+            the universal human dimension of longing, stillness, or transcendence that the paintings
+            carry regardless of belief. 2-3 sentences.]
+          </p>
+
+          <div class="him-verse">
+            <p>"[Your favourite scripture verse here — the one that speaks most directly to
+            your work or your practice.]"</p>
+            <cite>[Book Chapter:Verse]</cite>
+          </div>
+        </div>
+
+        <div class="him-image">
+          <!-- <img src="works/him-image.jpg" alt="Ellie in the studio" /> -->
+          <div class="him-image-placeholder"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── CONTACT / CUSTOMS ─── -->
+  <div class="page-inner">
+    <section id="contact">
+      <p class="section-label">Contact Me — Customs</p>
+      <div class="contact-grid">
+
+        <div class="contact-intro">
+          <h2 class="section-heading">Let's make something for you.</h2>
+          <p>
+            Custom commissions are open. Whether you have a specific vision in
+            mind or just know the feeling you want on your wall, reach out and
+            we'll figure out the rest together.
+          </p>
+          <p>
+            I also take inquiries on existing works and prints.
+          </p>
+          <div class="contact-details">
+            <a href="mailto:[your@email.com]">[your@email.com]</a>
+            <a href="https://www.instagram.com/solideoglorea/" target="_blank">@solideoglorea</a>
+          </div>
+        </div>
+
+        <form>
+          <div class="form-row">
+            <label>
+              First Name
+              <input type="text" name="first_name" placeholder="Jane" />
+            </label>
+            <label>
+              Last Name
+              <input type="text" name="last_name" placeholder="Smith" />
+            </label>
+          </div>
+
+          <label>
+            Email Address
+            <input type="email" name="email" placeholder="jane@example.com" />
+          </label>
+
+          <label>
+            I am interested in
+            <select name="inquiry_type">
+              <option value="" disabled selected>Select one</option>
+              <option value="custom">A custom commission</option>
+              <option value="existing">An existing work</option>
+              <option value="print">A print</option>
+              <option value="other">Something else</option>
+            </select>
+          </label>
+
+          <label>
+            Budget (optional)
+            <input type="text" name="budget" placeholder="e.g. $500 - $2,000" />
+          </label>
+
+          <label>
+            Tell me more
+            <textarea name="message" placeholder="What are you looking for? Size, colors, mood, where it will live — anything helps."></textarea>
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox" name="newsletter" />
+            Keep me updated on new works and available pieces
+          </label>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">Ellie Rinella</span>
+        <p>Abstract religious art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#about">About Me</a>
+        <a href="#collections">Collections</a>
+        <a href="#him">Him</a>
+        <a href="#contact">Contact Me</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">Instagram</a>
+        <a href="mailto:[your@email.com]">[your@email.com]</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Ellie Rinella 2025. All rights reserved.</p>
+      <p>&copy; Elevate Operations</p>
+    </div>
+  </footer>
+
+</body>
+</html>
