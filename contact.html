@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Me — Ellie Rinella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800;900&family=Courier+Prime:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-intro p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      max-width: 440px;
+    }
+
+    .contact-details {
+      margin-top: 40px;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .contact-detail-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 16px;
+      align-items: baseline;
+    }
+
+    .contact-detail-row dt {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .contact-detail-row dd {
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .contact-detail-row dd a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .process-list {
+      margin-top: 48px;
+    }
+
+    .process-list h3 {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .process-step-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--gray);
+      padding-top: 2px;
+    }
+
+    .process-step-text {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--black);
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 56px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-nav" id="mobileNav">
+    <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
+    <a href="about.html">About Me</a>
+    <a href="collections.html">Collections</a>
+    <a href="him.html">Him</a>
+    <a href="contact.html">Contact Me</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">solideoglorea</a>
+      <nav class="primary">
+        <a href="about.html">About Me</a>
+        <a href="collections.html">Collections</a>
+        <a href="him.html">Him</a>
+        <a href="contact.html" class="active">Contact Me</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">Instagram</a>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">Contact Me — Customs</p>
+    <h1 class="page-hero-title">let's make something for you.</h1>
+  </div>
+
+  <div class="page-inner">
+    <section>
+      <div class="contact-layout">
+
+        <div class="contact-intro">
+          <span class="label">Get in Touch</span>
+          <p>
+            Custom commissions are open. Whether you have a specific vision or just know
+            the feeling you want on your wall, reach out and we'll figure it out together.
+          </p>
+          <p>
+            I also take inquiries on existing works and prints.
+          </p>
+
+          <dl class="contact-details">
+            <div class="contact-detail-row">
+              <dt>Email</dt>
+              <dd><a href="mailto:[your@email.com]">[your@email.com]</a></dd>
+            </div>
+            <div class="contact-detail-row">
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/solideoglorea/" target="_blank">@solideoglorea</a></dd>
+            </div>
+            <div class="contact-detail-row">
+              <dt>Response</dt>
+              <dd>Within 48 hours</dd>
+            </div>
+          </dl>
+
+          <div class="process-list">
+            <h3>Commission Process</h3>
+            <div class="process-step">
+              <span class="process-step-num">01.</span>
+              <span class="process-step-text">Send a message with your vision, size, budget, and where the piece will live.</span>
+            </div>
+            <div class="process-step">
+              <span class="process-step-num">02.</span>
+              <span class="process-step-text">Ellie follows up with questions and a quote. A 50% deposit holds your spot.</span>
+            </div>
+            <div class="process-step">
+              <span class="process-step-num">03.</span>
+              <span class="process-step-text">The work is made. You receive progress photos along the way.</span>
+            </div>
+            <div class="process-step">
+              <span class="process-step-num">04.</span>
+              <span class="process-step-text">Final payment on completion. Shipped or available for local pickup.</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="label">Send a Message</span>
+          <form>
+            <div class="form-row">
+              <label>
+                First Name
+                <input type="text" name="first_name" placeholder="Jane" />
+              </label>
+              <label>
+                Last Name
+                <input type="text" name="last_name" placeholder="Smith" />
+              </label>
+            </div>
+
+            <label>
+              Email Address
+              <input type="email" name="email" placeholder="jane@example.com" />
+            </label>
+
+            <label>
+              I am interested in
+              <select name="inquiry_type">
+                <option value="" disabled selected>Select one</option>
+                <option value="custom">A custom commission</option>
+                <option value="existing">An existing work</option>
+                <option value="print">A print</option>
+                <option value="other">Something else</option>
+              </select>
+            </label>
+
+            <label>
+              Budget (optional)
+              <input type="text" name="budget" placeholder="e.g. $500 — $2,000" />
+            </label>
+
+            <label>
+              Tell me more
+              <textarea name="message" placeholder="What are you looking for? Size, colors, mood, where it will live — anything helps."></textarea>
+            </label>
+
+            <label class="checkbox-row">
+              <input type="checkbox" name="newsletter" />
+              Keep me updated on new works and available pieces
+            </label>
+
+            <button type="submit" class="btn btn-fill">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand-name">solideoglorea</span>
+        <p>Abstract religious art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="about.html">About Me</a>
+        <a href="collections.html">Collections</a>
+        <a href="him.html">Him</a>
+        <a href="contact.html">Contact Me</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">Instagram</a>
+        <a href="mailto:[your@email.com]">[your@email.com]</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Ellie Rinella 2025. All rights reserved.</p>
+      <p>&copy; Elevate Operations</p>
+    </div>
+  </footer>
+
+</body>
+</html>

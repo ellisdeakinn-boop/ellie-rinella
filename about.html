@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me — Ellie Rinella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800;900&family=Courier+Prime:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-image {
+      aspect-ratio: 4/5;
+      background: var(--light-gray);
+      overflow: hidden;
+      position: sticky;
+      top: 88px;
+    }
+
+    .about-image-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, #e8e0d5 0%, #c8bfb0 100%);
+    }
+
+    .about-content p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      color: #222;
+    }
+
+    .about-meta {
+      margin-top: 48px;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .about-meta-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+
+    .about-meta-item dt {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .about-meta-item dd {
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-image { position: static; aspect-ratio: 3/2; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-nav" id="mobileNav">
+    <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
+    <a href="about.html">About Me</a>
+    <a href="collections.html">Collections</a>
+    <a href="him.html">Him</a>
+    <a href="contact.html">Contact Me</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">solideoglorea</a>
+      <nav class="primary">
+        <a href="about.html" class="active">About Me</a>
+        <a href="collections.html">Collections</a>
+        <a href="him.html">Him</a>
+        <a href="contact.html">Contact Me</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">Instagram</a>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">About Me</p>
+    <h1 class="page-hero-title">ellie rinella</h1>
+  </div>
+
+  <div class="page-inner">
+    <section>
+      <div class="about-grid">
+
+        <div class="about-image">
+          <!-- Replace with: <img src="images/ellie-portrait.jpg" alt="Ellie Rinella" /> -->
+          <div class="about-image-placeholder"></div>
+        </div>
+
+        <div class="about-content">
+          <span class="label">The Artist</span>
+
+          <p>
+            [Introduce yourself in your own voice — where you're from, when you started painting,
+            and what brought you to abstract religious work. Keep it personal and grounded. 3 sentences.]
+          </p>
+
+          <p>
+            [Talk about what drives your practice — the spiritual dimension, the process, the
+            feeling you're chasing in the studio. What does a typical painting session feel like
+            for you? 2–3 sentences.]
+          </p>
+
+          <blockquote>
+            "[Your own quote about what painting means to you — something personal and honest.]"
+          </blockquote>
+
+          <p>
+            [Close with what you hope people feel when they see your work — and a brief note
+            about commissions or the kind of homes and spaces your paintings live in. 2 sentences.]
+          </p>
+
+          <dl class="about-meta">
+            <div class="about-meta-item">
+              <dt>Based in</dt>
+              <dd>[City, State]</dd>
+            </div>
+            <div class="about-meta-item">
+              <dt>Medium</dt>
+              <dd>Oil, acrylic, mixed media on canvas and panel</dd>
+            </div>
+            <div class="about-meta-item">
+              <dt>Focus</dt>
+              <dd>Abstract religious and spiritual painting</dd>
+            </div>
+            <div class="about-meta-item">
+              <dt>Commissions</dt>
+              <dd>Open — <a href="contact.html" style="text-decoration:underline;">contact here</a></dd>
+            </div>
+            <div class="about-meta-item">
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/solideoglorea/" target="_blank" style="text-decoration:underline;">@solideoglorea</a></dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand-name">solideoglorea</span>
+        <p>Abstract religious art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="about.html">About Me</a>
+        <a href="collections.html">Collections</a>
+        <a href="him.html">Him</a>
+        <a href="contact.html">Contact Me</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">Instagram</a>
+        <a href="mailto:[your@email.com]">[your@email.com]</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Ellie Rinella 2025. All rights reserved.</p>
+      <p>&copy; Elevate Operations</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collections — Ellie Rinella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800;900&family=Courier+Prime:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="mobile-nav" id="mobileNav">
+    <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
+    <a href="about.html">About Me</a>
+    <a href="collections.html">Collections</a>
+    <a href="him.html">Him</a>
+    <a href="contact.html">Contact Me</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">solideoglorea</a>
+      <nav class="primary">
+        <a href="about.html">About Me</a>
+        <a href="collections.html" class="active">Collections</a>
+        <a href="him.html">Him</a>
+        <a href="contact.html">Contact Me</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">Instagram</a>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">Collections</p>
+    <h1 class="page-hero-title">available works</h1>
+  </div>
+
+  <div class="page-inner">
+
+    <!-- Collection One -->
+    <section>
+      <div class="collection-group">
+        <p class="collection-group-title">[Collection Name — e.g. "Lament" or "The Hours"]</p>
+        <div class="works-grid">
+
+          <div class="work-card">
+            <div class="work-image">
+              <!-- <img src="works/painting-1.jpg" alt="[Title]" /> -->
+              <div style="background:linear-gradient(145deg,#d6cfc4,#b8a99a);"></div>
+            </div>
+            <p class="work-title">[Painting Title One]</p>
+            <p class="work-meta">72 &times; 96 in. &nbsp; Oil on canvas &nbsp; 2024</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#c9c3d6,#9e96b0);"></div>
+            </div>
+            <p class="work-title">[Painting Title Two]</p>
+            <p class="work-meta">60 &times; 48 in. &nbsp; Oil on linen &nbsp; 2024</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d4c9be,#c2b4a6);"></div>
+            </div>
+            <p class="work-title">[Painting Title Three]</p>
+            <p class="work-meta">48 &times; 36 in. &nbsp; Acrylic, oil on panel &nbsp; 2025</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#e2d9c9,#cbbfa8);"></div>
+              <span class="work-badge sold">Sold</span>
+            </div>
+            <p class="work-title">[Painting Title Four]</p>
+            <p class="work-meta">36 &times; 36 in. &nbsp; Oil on canvas &nbsp; 2024</p>
+            <p class="work-price" style="color:var(--gray);">Sold</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Collection Two -->
+      <div class="collection-group">
+        <p class="collection-group-title">[Second Collection — e.g. "Advent" or "Studies in Light"]</p>
+        <div class="works-grid">
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#cad0d6,#a8b2bc);"></div>
+            </div>
+            <p class="work-title">[Painting Title Five]</p>
+            <p class="work-meta">30 &times; 24 in. &nbsp; Oil on linen &nbsp; 2025</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d9d2c6,#c2b8a3);"></div>
+            </div>
+            <p class="work-title">[Painting Title Six]</p>
+            <p class="work-meta">30 &times; 24 in. &nbsp; Oil on canvas &nbsp; 2025</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d5cec5,#bdb5a8);"></div>
+            </div>
+            <p class="work-title">[Painting Title Seven]</p>
+            <p class="work-meta">24 &times; 20 in. &nbsp; Oil, oil stick on panel &nbsp; 2025</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#ddd6cc,#c4baad);"></div>
+            </div>
+            <p class="work-title">[Painting Title Eight]</p>
+            <p class="work-meta">24 &times; 18 in. &nbsp; Oil on canvas &nbsp; 2024</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Works on Paper -->
+      <div class="collection-group">
+        <p class="collection-group-title">Works on Paper &amp; Small Format</p>
+        <div class="works-grid small">
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d8d0c8,#b8b0a4);"></div>
+            </div>
+            <p class="work-title">[Study One]</p>
+            <p class="work-meta">14 &times; 10 in. &nbsp; Gouache on paper</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d0cdd8,#b0adb8);"></div>
+            </div>
+            <p class="work-title">[Study Two]</p>
+            <p class="work-meta">14 &times; 10 in. &nbsp; Ink, gouache on paper</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d4cfc6,#b4afa6);"></div>
+            </div>
+            <p class="work-title">[Study Three]</p>
+            <p class="work-meta">12 &times; 9 in. &nbsp; Watercolor, oil stick</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#ddd7cc,#c4bfb2);"></div>
+            </div>
+            <p class="work-title">[Study Four]</p>
+            <p class="work-meta">10 &times; 8 in. &nbsp; Oil on panel</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d2cec8,#b8b3aa);"></div>
+            </div>
+            <p class="work-title">[Study Five]</p>
+            <p class="work-meta">10 &times; 8 in. &nbsp; Acrylic on panel</p>
+            <p class="work-price">$[Price]</p>
+            <a href="contact.html" class="work-link">Inquire</a>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <div style="background:linear-gradient(145deg,#d6d0c9,#bcb6ae);"></div>
+              <span class="work-badge sold">Sold</span>
+            </div>
+            <p class="work-title">[Study Six]</p>
+            <p class="work-meta">8 &times; 6 in. &nbsp; Gouache, ink on paper</p>
+            <p class="work-price" style="color:var(--gray);">Sold</p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Commission CTA -->
+    <section style="text-align:center; padding: 80px 0;">
+      <span class="label" style="display:block; text-align:center;">Custom Commissions</span>
+      <h2 class="section-heading" style="text-align:center; max-width:600px; margin: 0 auto 24px;">don't see what you're looking for?</h2>
+      <p style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.08em; color:var(--gray); margin-bottom:36px;">Custom commissions are open. Reach out and let's make something together.</p>
+      <a href="contact.html" class="btn">Request a Commission</a>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand-name">solideoglorea</span>
+        <p>Abstract religious art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="about.html">About Me</a>
+        <a href="collections.html">Collections</a>
+        <a href="him.html">Him</a>
+        <a href="contact.html">Contact Me</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">Instagram</a>
+        <a href="mailto:[your@email.com]">[your@email.com]</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Ellie Rinella 2025. All rights reserved.</p>
+      <p>&copy; Elevate Operations</p>
+    </div>
+  </footer>
+
+</body>
+</html>
