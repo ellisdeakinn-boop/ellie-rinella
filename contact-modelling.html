@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modelling Inquiry — Ellie Rinella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800;900&family=Courier+Prime:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .back-link {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: var(--gray);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 32px;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--black); text-decoration: none; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-intro p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .stats-grid {
+      margin-top: 48px;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .stat-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      padding-right: 24px;
+    }
+
+    .stat-item:nth-child(even) { padding-right: 0; padding-left: 24px; border-left: 1px solid var(--border); }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: var(--gray);
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--black);
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-nav" id="mobileNav">
+    <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
+    <a href="about.html">about me</a>
+    <a href="collections.html">collections</a>
+    <a href="creative-direction.html">creative direction</a>
+    <a href="him.html">him</a>
+    <a href="contact.html">contact me</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">solideoglorea</a>
+      <nav class="primary">
+        <a href="about.html">about me</a>
+        <a href="collections.html">collections</a>
+        <a href="creative-direction.html">creative direction</a>
+        <a href="him.html">him</a>
+        <a href="contact.html" class="active">contact me</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">instagram</a>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">modelling</p>
+    <h1 class="page-hero-title">book ellie.</h1>
+  </div>
+
+  <div class="page-inner">
+    <section>
+      <a href="contact.html" class="back-link">← back to contact</a>
+      <div class="contact-layout">
+
+        <div class="contact-intro reveal-left">
+          <span class="label">modelling inquiry</span>
+          <p>
+            available for commercial, editorial, and brand work. send through your brief, dates, and usage and i'll get back to you on fit and availability.
+          </p>
+          <p>
+            please include as much detail as possible — usage rights, location, and any references help me come back to you quickly.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-item">
+              <p class="stat-label">height</p>
+              <p class="stat-value">[height]</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-label">location</p>
+              <p class="stat-value">[city, state]</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-label">available for</p>
+              <p class="stat-value">commercial, editorial, brand</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-label">travel</p>
+              <p class="stat-value">available — expenses covered</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-label">instagram</p>
+              <p class="stat-value"><a href="https://www.instagram.com/solideoglorea/" target="_blank" style="text-decoration:underline;">@solideoglorea</a></p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-label">response</p>
+              <p class="stat-value">within 48 hours</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <span class="label">booking inquiry</span>
+          <form>
+            <div class="form-row">
+              <label>first name<input type="text" name="first_name" placeholder="Jane" /></label>
+              <label>last name<input type="text" name="last_name" placeholder="Smith" /></label>
+            </div>
+            <label>email address<input type="email" name="email" placeholder="jane@example.com" /></label>
+            <label>company / agency (optional)<input type="text" name="company" placeholder="Brand or Agency Name" /></label>
+            <label>
+              shoot type
+              <select name="shoot_type">
+                <option value="" disabled selected>select one</option>
+                <option value="commercial">commercial</option>
+                <option value="editorial">editorial</option>
+                <option value="brand-campaign">brand campaign</option>
+                <option value="lookbook">lookbook</option>
+                <option value="social-content">social content</option>
+                <option value="other">other</option>
+              </select>
+            </label>
+            <label>shoot date(s)<input type="text" name="dates" placeholder="e.g. June 12 — 14, 2025" /></label>
+            <label>location<input type="text" name="location" placeholder="e.g. Los Angeles, CA" /></label>
+            <label>usage &amp; exclusivity<input type="text" name="usage" placeholder="e.g. digital, 12 months, non-exclusive" /></label>
+            <label>day rate / budget (optional)<input type="text" name="budget" placeholder="e.g. $800/day" /></label>
+            <label>brief &amp; references<textarea name="message" placeholder="tell me about the shoot — mood, concept, brand, what you're going for. share references or a mood board if you have one."></textarea></label>
+            <button type="submit" class="btn btn-fill">send booking inquiry</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand-name">solideoglorea</span>
+        <p>Christian abstract art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
+      </div>
+      <div class="footer-col">
+        <h4>navigate</h4>
+        <a href="about.html">about me</a>
+        <a href="collections.html">collections</a>
+        <a href="creative-direction.html">creative direction</a>
+        <a href="him.html">him</a>
+        <a href="contact.html">contact me</a>
+      </div>
+      <div class="footer-col">
+        <h4>connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">instagram</a>
+        <a href="mailto:[your@email.com]">[your@email.com]</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ellie rinella 2025. all rights reserved.</p>
+    </div>
+  </footer>
+
+<script src="scroll.js"></script>
+</body>
+</html>

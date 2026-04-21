@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art Inquiry — Ellie Rinella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800;900&family=Courier+Prime:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .back-link {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: var(--gray);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 32px;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--black); text-decoration: none; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-intro p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .process-list { margin-top: 48px; }
+
+    .process-list h3 {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .process-step-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gray);
+      padding-top: 2px;
+    }
+
+    .process-step-text {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-nav" id="mobileNav">
+    <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
+    <a href="about.html">about me</a>
+    <a href="collections.html">collections</a>
+    <a href="creative-direction.html">creative direction</a>
+    <a href="him.html">him</a>
+    <a href="contact.html">contact me</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">solideoglorea</a>
+      <nav class="primary">
+        <a href="about.html">about me</a>
+        <a href="collections.html">collections</a>
+        <a href="creative-direction.html">creative direction</a>
+        <a href="him.html">him</a>
+        <a href="contact.html" class="active">contact me</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">instagram</a>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">art &amp; commissions</p>
+    <h1 class="page-hero-title">let's make something for you.</h1>
+  </div>
+
+  <div class="page-inner">
+    <section>
+      <a href="contact.html" class="back-link">← back to contact</a>
+      <div class="contact-layout">
+
+        <div class="contact-intro reveal-left">
+          <span class="label">art inquiry</span>
+          <p>
+            custom commissions are open. whether you have a specific vision or just know the feeling you want on your wall, reach out and we'll figure it out together.
+          </p>
+          <p>
+            i also take inquiries on existing works and prints.
+          </p>
+
+          <div class="process-list stagger">
+            <h3>how it works</h3>
+            <div class="process-step">
+              <span class="process-step-num">01.</span>
+              <span class="process-step-text">send a message with your vision, size, budget, and where the piece will live.</span>
+            </div>
+            <div class="process-step">
+              <span class="process-step-num">02.</span>
+              <span class="process-step-text">ellie follows up with questions and a quote. a 50% deposit holds your spot.</span>
+            </div>
+            <div class="process-step">
+              <span class="process-step-num">03.</span>
+              <span class="process-step-text">the work is made. you receive progress photos along the way.</span>
+            </div>
+            <div class="process-step">
+              <span class="process-step-num">04.</span>
+              <span class="process-step-text">final payment on completion. shipped or available for local pickup.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <span class="label">send a message</span>
+          <form>
+            <div class="form-row">
+              <label>first name<input type="text" name="first_name" placeholder="Jane" /></label>
+              <label>last name<input type="text" name="last_name" placeholder="Smith" /></label>
+            </div>
+            <label>email address<input type="email" name="email" placeholder="jane@example.com" /></label>
+            <label>
+              i am interested in
+              <select name="inquiry_type">
+                <option value="" disabled selected>select one</option>
+                <option value="custom">a custom commission</option>
+                <option value="existing">an existing work</option>
+                <option value="print">a print</option>
+                <option value="other">something else</option>
+              </select>
+            </label>
+            <label>size (optional)<input type="text" name="size" placeholder="e.g. 24 × 36 in." /></label>
+            <label>budget (optional)<input type="text" name="budget" placeholder="e.g. $500 — $2,000" /></label>
+            <label>tell me more<textarea name="message" placeholder="what are you looking for? size, colours, mood, where it will live — anything helps."></textarea></label>
+            <label class="checkbox-row">
+              <input type="checkbox" name="newsletter" />
+              keep me updated on new works and available pieces
+            </label>
+            <button type="submit" class="btn btn-fill">send inquiry</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand-name">solideoglorea</span>
+        <p>Christian abstract art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
+      </div>
+      <div class="footer-col">
+        <h4>navigate</h4>
+        <a href="about.html">about me</a>
+        <a href="collections.html">collections</a>
+        <a href="creative-direction.html">creative direction</a>
+        <a href="him.html">him</a>
+        <a href="contact.html">contact me</a>
+      </div>
+      <div class="footer-col">
+        <h4>connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">instagram</a>
+        <a href="mailto:[your@email.com]">[your@email.com]</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ellie rinella 2025. all rights reserved.</p>
+    </div>
+  </footer>
+
+<script src="scroll.js"></script>
+</body>
+</html>

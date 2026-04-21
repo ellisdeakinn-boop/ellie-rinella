@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Direction Inquiry — Ellie Rinella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800;900&family=Courier+Prime:wght@400;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .back-link {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: var(--gray);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 32px;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--black); text-decoration: none; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-intro p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .services-mini {
+      margin-top: 48px;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+    }
+
+    .services-mini h3 {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .service-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-row span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .service-row span:last-child {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--gray);
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-nav" id="mobileNav">
+    <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
+    <a href="about.html">about me</a>
+    <a href="collections.html">collections</a>
+    <a href="creative-direction.html">creative direction</a>
+    <a href="him.html">him</a>
+    <a href="contact.html">contact me</a>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">solideoglorea</a>
+      <nav class="primary">
+        <a href="about.html">about me</a>
+        <a href="collections.html">collections</a>
+        <a href="creative-direction.html">creative direction</a>
+        <a href="him.html">him</a>
+        <a href="contact.html" class="active">contact me</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">instagram</a>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">creative direction</p>
+    <h1 class="page-hero-title">let's build the vision.</h1>
+  </div>
+
+  <div class="page-inner">
+    <section>
+      <a href="contact.html" class="back-link">← back to contact</a>
+      <div class="contact-layout">
+
+        <div class="contact-intro reveal-left">
+          <span class="label">creative direction inquiry</span>
+          <p>
+            available for brand shoots, editorial, campaign, and concept work. tell me about the project and i'll come back to you with whether it's a fit and how i can help.
+          </p>
+          <p>
+            the more detail you share upfront, the better.
+          </p>
+
+          <div class="services-mini">
+            <h3>what i offer</h3>
+            <div class="service-row">
+              <span>concept development</span>
+              <span>mood, narrative, references</span>
+            </div>
+            <div class="service-row">
+              <span>art direction</span>
+              <span>on-set direction, photo &amp; video</span>
+            </div>
+            <div class="service-row">
+              <span>brand identity</span>
+              <span>visual language &amp; guidelines</span>
+            </div>
+            <div class="service-row">
+              <span>editorial</span>
+              <span>lookbooks, campaigns, shoots</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <span class="label">send a message</span>
+          <form>
+            <div class="form-row">
+              <label>first name<input type="text" name="first_name" placeholder="Jane" /></label>
+              <label>last name<input type="text" name="last_name" placeholder="Smith" /></label>
+            </div>
+            <label>email address<input type="email" name="email" placeholder="jane@example.com" /></label>
+            <label>company / brand (optional)<input type="text" name="company" placeholder="Brand Name" /></label>
+            <label>
+              project type
+              <select name="project_type">
+                <option value="" disabled selected>select one</option>
+                <option value="concept">concept development</option>
+                <option value="art-direction">art direction / on-set</option>
+                <option value="brand">brand identity</option>
+                <option value="editorial">editorial / lookbook</option>
+                <option value="campaign">campaign</option>
+                <option value="other">other</option>
+              </select>
+            </label>
+            <label>timeline<input type="text" name="timeline" placeholder="e.g. shoot in June, 6-week turnaround" /></label>
+            <label>budget (optional)<input type="text" name="budget" placeholder="e.g. $1,000 — $5,000" /></label>
+            <label>tell me about the project<textarea name="message" placeholder="what's the brief? what feeling are you going for? who is the audience? share references if you have them."></textarea></label>
+            <button type="submit" class="btn btn-fill">send inquiry</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand-name">solideoglorea</span>
+        <p>Christian abstract art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
+      </div>
+      <div class="footer-col">
+        <h4>navigate</h4>
+        <a href="about.html">about me</a>
+        <a href="collections.html">collections</a>
+        <a href="creative-direction.html">creative direction</a>
+        <a href="him.html">him</a>
+        <a href="contact.html">contact me</a>
+      </div>
+      <div class="footer-col">
+        <h4>connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank">instagram</a>
+        <a href="mailto:[your@email.com]">[your@email.com]</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ellie rinella 2025. all rights reserved.</p>
+    </div>
+  </footer>
+
+<script src="scroll.js"></script>
+</body>
+</html>
