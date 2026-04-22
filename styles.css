@@ -504,10 +504,6 @@ footer {
 /* ─── HERO CIRCLE ─── */
 .hero-circle {
   position: absolute;
-  top: -12%;
-  left: -5%;
-  width: 110%;
-  height: 124%;
   pointer-events: none;
   overflow: visible;
 }
