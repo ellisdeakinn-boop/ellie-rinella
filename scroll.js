@@ -12,36 +12,35 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // Hero circle — position over h1 using actual bounding rect
-  function positionHeroCircle() {
-    const circle = document.querySelector('.hero-circle');
-    const title  = document.querySelector('.home-hero-title');
-    if (!circle || !title) return;
-
-    // Measure actual text bounds (not the full-width block box)
+  // Position a single circle over its sibling h1 using actual text bounds
+  function positionCircle(circle) {
+    const parent = circle.parentElement;
+    const title  = parent.querySelector('h1');
+    if (!title) return;
     const range = document.createRange();
     range.selectNodeContents(title);
     const lineRects = Array.from(range.getClientRects()).filter(r => r.width > 10);
     if (!lineRects.length) return;
-
-    const pr     = title.parentElement.getBoundingClientRect();
+    const pr     = parent.getBoundingClientRect();
     const left   = Math.min(...lineRects.map(r => r.left));
     const top    = Math.min(...lineRects.map(r => r.top));
     const right  = Math.max(...lineRects.map(r => r.right));
     const bottom = Math.max(...lineRects.map(r => r.bottom));
-
-    const padX = (right - left) * 0.08;
-    const padY = (bottom - top) * 0.14;
-
+    const padX   = (right - left)  * 0.08;
+    const padY   = (bottom - top)  * 0.14;
     circle.style.left   = (left - pr.left - padX) + 'px';
     circle.style.top    = (top  - pr.top  - padY) + 'px';
     circle.style.width  = (right - left + padX * 2) + 'px';
     circle.style.height = (bottom - top  + padY * 2) + 'px';
   }
 
+  function positionAllCircles() {
+    document.querySelectorAll('.hero-circle').forEach(positionCircle);
+  }
+
   document.fonts.ready.then(() => {
-    positionHeroCircle();
-    window.addEventListener('resize', positionHeroCircle);
+    positionAllCircles();
+    window.addEventListener('resize', positionAllCircles);
   });
 
   // Sketch underline on scroll for touch devices — resets when out of view
@@ -51,34 +50,34 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entry.isIntersecting) {
           entry.target.classList.add('drawn');
         } else {
-          // Reset so it redraws next time it scrolls back in
           entry.target.classList.remove('drawn');
-          void entry.target.offsetWidth; // force reflow to restart animation
+          void entry.target.offsetWidth;
         }
       });
     }, { threshold: 0.4 });
 
-    document.querySelectorAll('.block-title, h2.section-heading').forEach(el => {
+    document.querySelectorAll('.block-title, h2.section-heading, .work-title, .project-title').forEach(el => {
       underlineObserver.observe(el);
     });
 
-    // Hero circle — redraw when hero scrolls back into view
-    const heroSection = document.querySelector('.home-hero');
-    const heroPath    = document.querySelector('.hero-circle-path');
-    if (heroSection && heroPath) {
+    // Hero circles — redraw each when its section scrolls back into view
+    document.querySelectorAll('.hero-circle').forEach(circle => {
+      const section = circle.closest('.home-hero, .page-hero');
+      const path    = circle.querySelector('.hero-circle-path');
+      if (!section || !path) return;
       let initialLoad = true;
       const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             if (initialLoad) { initialLoad = false; return; }
-            heroPath.style.animation = 'none';
-            void heroPath.offsetWidth;
-            heroPath.style.animation = '';
+            path.style.animation = 'none';
+            void path.offsetWidth;
+            path.style.animation = '';
           }
         });
       }, { threshold: 0.3 });
-      heroObserver.observe(heroSection);
-    }
+      heroObserver.observe(section);
+    });
   }
 
   // Footer social link hover — override inline opacity so CSS hover rules apply
