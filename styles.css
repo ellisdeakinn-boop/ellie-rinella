@@ -513,7 +513,11 @@ footer {
 .hero-circle-path {
   stroke-dasharray: 1800;
   stroke-dashoffset: 1800;
-  animation: drawHeroCircle 2.4s cubic-bezier(0.4, 0, 0.2, 1) 1s forwards;
+}
+
+/* Animation triggered by JS after circle is positioned */
+.hero-circle.animate .hero-circle-path {
+  animation: drawHeroCircle 2.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes drawHeroCircle {
@@ -526,14 +530,12 @@ footer {
 
 /* ─── SKETCH UNDERLINE ─── */
 .block-title,
-h2.section-heading,
 .work-title,
 .project-title {
   position: relative;
 }
 
 .block-title::after,
-h2.section-heading::after,
 .work-title::after,
 .project-title::after {
   content: '';
@@ -551,11 +553,9 @@ h2.section-heading::after,
 }
 
 .section-block:hover .block-title::after,
-h2.section-heading:hover::after,
 .work-card:hover .work-title::after,
 .project-card:hover .project-title::after,
 .block-title.drawn::after,
-h2.section-heading.drawn::after,
 .work-title.drawn::after,
 .project-title.drawn::after {
   clip-path: inset(0 0% 0 0);
@@ -563,7 +563,6 @@ h2.section-heading.drawn::after,
 
 @media (hover: none) {
   .block-title::after,
-  h2.section-heading::after,
   .work-title::after,
   .project-title::after {
     transition: clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.35s;

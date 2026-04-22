@@ -40,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.fonts.ready.then(() => {
     positionAllCircles();
+    // Trigger animation only after circles are positioned
+    setTimeout(() => {
+      document.querySelectorAll('.hero-circle').forEach(c => c.classList.add('animate'));
+    }, 700);
     window.addEventListener('resize', positionAllCircles);
   });
 
@@ -56,23 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.4 });
 
-    document.querySelectorAll('.block-title, h2.section-heading, .work-title, .project-title').forEach(el => {
+    document.querySelectorAll('.block-title, .work-title, .project-title').forEach(el => {
       underlineObserver.observe(el);
     });
 
     // Hero circles — redraw each when its section scrolls back into view
     document.querySelectorAll('.hero-circle').forEach(circle => {
       const section = circle.closest('.home-hero, .page-hero');
-      const path    = circle.querySelector('.hero-circle-path');
-      if (!section || !path) return;
+      if (!section) return;
       let initialLoad = true;
       const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             if (initialLoad) { initialLoad = false; return; }
-            path.style.animation = 'none';
-            void path.offsetWidth;
-            path.style.animation = '';
+            circle.classList.remove('animate');
+            void circle.offsetWidth;
+            circle.classList.add('animate');
           }
         });
       }, { threshold: 0.3 });
