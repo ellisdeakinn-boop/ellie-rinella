@@ -452,6 +452,38 @@ footer {
 
 .footer-col a:hover { opacity: 1; text-decoration: none; }
 
+/* ─── FOOTER SOCIAL LINKS ─── */
+.footer-social-link {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  height: 20px;
+  line-height: 1 !important;
+  margin-bottom: 8px;
+}
+
+.footer-social-link svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  transition: opacity 0.22s ease;
+}
+
+.footer-social-link span {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+  color: var(--white);
+  transition: opacity 0.22s ease;
+}
+
+.footer-social-link:hover svg { opacity: 0; }
+.footer-social-link:hover span { opacity: 1; }
+
 .footer-bottom {
   max-width: 1400px;
   margin: 0 auto;
