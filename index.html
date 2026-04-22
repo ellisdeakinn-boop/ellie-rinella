@@ -195,11 +195,10 @@
   <div class="mobile-nav" id="mobileNav">
     <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
     <a href="about.html">about me</a>
-        <a href="collections.html">collections</a>
-        <a href="creative-direction.html">creative direction</a>
-        <a href="modelling.html">modelling</a>
-        <a href="him.html">him</a>
-        <a href="contact.html">contact me</a>
+    <a href="collections.html" class="nav-sub">collections</a>
+    <a href="creative-direction.html" class="nav-sub">creative direction</a>
+    <a href="modelling.html" class="nav-sub">modelling</a>
+    <a href="contact.html">contact me</a>
   </div>
 
   <!-- HEADER -->
@@ -207,12 +206,9 @@
     <div class="header-inner">
       <a href="index.html" class="logo">solideoglorea</a>
       <nav class="primary">
-        <a href="about.html">about me</a>
-        <a href="collections.html">collections</a>
-        <a href="creative-direction.html">creative direction</a>
-        <a href="modelling.html">modelling</a>
-        <a href="him.html">him</a>
-        <a href="contact.html">contact me</a>
+        <a href="about.html">about</a>
+        <a href="index.html#work" class="active">work</a>
+        <a href="contact.html">contact</a>
       </nav>
       <div class="header-social">
         <a href="https://www.instagram.com/solideoglorea/" target="_blank" title="@solideoglorea — art">
@@ -240,69 +236,68 @@
   <div class="home-hero">
     <div class="home-hero-bg"></div>
     <div class="home-hero-content reveal">
-      <p class="home-hero-eyebrow">Christian Abstract Art</p>
+      <p class="home-hero-eyebrow">christian abstract art</p>
       <h1 class="home-hero-title">ellie<br>rinella.</h1>
       <div class="home-hero-meta">
-        <span>Original Paintings</span>
-        <span>Custom Commissions</span>
-        <span>Works on Paper</span>
+        <span>original paintings</span>
+        <span>custom commissions</span>
+        <span>works on paper</span>
       </div>
     </div>
   </div>
 
   <!-- MARQUEE -->
-
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <span>Christian Abstract Art</span><span class="dot">·</span>
-      <span>Original Paintings</span><span class="dot">·</span>
-      <span>Custom Commissions</span><span class="dot">·</span>
-      <span>Works on Paper</span><span class="dot">·</span>
-      <span>Soli Deo Gloria</span><span class="dot">·</span>
-      <span>Christian Abstract Art</span><span class="dot">·</span>
-      <span>Original Paintings</span><span class="dot">·</span>
-      <span>Custom Commissions</span><span class="dot">·</span>
-      <span>Works on Paper</span><span class="dot">·</span>
-      <span>Soli Deo Gloria</span><span class="dot">·</span>
+      <span>christian abstract art</span><span class="dot">·</span>
+      <span>original paintings</span><span class="dot">·</span>
+      <span>custom commissions</span><span class="dot">·</span>
+      <span>works on paper</span><span class="dot">·</span>
+      <span>soli deo gloria</span><span class="dot">·</span>
+      <span>christian abstract art</span><span class="dot">·</span>
+      <span>original paintings</span><span class="dot">·</span>
+      <span>custom commissions</span><span class="dot">·</span>
+      <span>works on paper</span><span class="dot">·</span>
+      <span>soli deo gloria</span><span class="dot">·</span>
     </div>
   </div>
 
   <!-- SECTION BLOCKS -->
-  <div class="section-blocks stagger">
-
-    <a class="section-block" href="about.html" style="text-decoration:none;">
-      <div class="block-image">
-        <div style="background:linear-gradient(160deg,#e8e0d5,#c8bfb0);"></div>
-      </div>
-      <div class="block-body">
-        <span class="block-label">About Me</span>
-        <h2 class="block-title">painting as a form of prayer.</h2>
-        <p class="block-desc">The story behind the work — faith, practice, and what it means to make art for God.</p>
-        <span class="btn" style="align-self:flex-start;">Read More</span>
-      </div>
-    </a>
+  <div class="section-blocks stagger" id="work">
 
     <a class="section-block" href="collections.html" style="text-decoration:none;">
       <div class="block-image">
         <div style="background:linear-gradient(160deg,#d6cfc4,#b8a99a);"></div>
       </div>
       <div class="block-body">
-        <span class="block-label">Collections</span>
+        <span class="block-label">collections</span>
         <h2 class="block-title">original works, available now.</h2>
         <p class="block-desc">Paintings, works on paper, and small format pieces — each one made by hand, from scratch.</p>
-        <span class="btn" style="align-self:flex-start;">View Works</span>
+        <span class="btn" style="align-self:flex-start;">view works</span>
       </div>
     </a>
 
-    <a class="section-block" href="him.html" style="text-decoration:none;">
+    <a class="section-block" href="creative-direction.html" style="text-decoration:none;">
       <div class="block-image">
-        <div style="background:linear-gradient(160deg,#d5cdc3,#b0a898);"></div>
+        <div style="background:linear-gradient(160deg,#e8e0d5,#c8bfb0);"></div>
       </div>
       <div class="block-body">
-        <span class="block-label">Him</span>
-        <h2 class="block-title">the reason for all of it.</h2>
-        <p class="block-desc">On faith, God, and why everything Ellie makes begins and ends with Him.</p>
-        <span class="btn" style="align-self:flex-start;">Read More</span>
+        <span class="block-label">creative direction</span>
+        <h2 class="block-title">the vision behind the shoot.</h2>
+        <p class="block-desc">Brand shoots, editorial, and concept work — previously for Kamp Love, Nissi Phoenix, and Ezra & Arthur.</p>
+        <span class="btn" style="align-self:flex-start;">view work</span>
+      </div>
+    </a>
+
+    <a class="section-block" href="modelling.html" style="text-decoration:none;">
+      <div class="block-image">
+        <div style="background:linear-gradient(160deg,#c9c3d6,#9e96b0);"></div>
+      </div>
+      <div class="block-body">
+        <span class="block-label">modelling</span>
+        <h2 class="block-title">5ft 9in. phoenix, az.</h2>
+        <p class="block-desc">Commercial, editorial, and brand. Available for travel. Represented independently.</p>
+        <span class="btn" style="align-self:flex-start;">view portfolio</span>
       </div>
     </a>
 
@@ -311,10 +306,10 @@
         <div style="background:linear-gradient(160deg,#cad0d6,#a8b2bc);"></div>
       </div>
       <div class="block-body">
-        <span class="block-label">Contact Me — Customs</span>
+        <span class="block-label">contact</span>
         <h2 class="block-title">let's make something for you.</h2>
-        <p class="block-desc">Custom commissions open. Reach out about existing works, prints, or a piece made just for you.</p>
-        <span class="btn" style="align-self:flex-start;">Get in Touch</span>
+        <p class="block-desc">Custom commissions open. Reach out about art, creative direction, or a modelling inquiry.</p>
+        <span class="btn" style="align-self:flex-start;">get in touch</span>
       </div>
     </a>
 
@@ -328,23 +323,34 @@
         <p>Christian abstract art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
       </div>
       <div class="footer-col">
-        <h4>Navigate</h4>
+        <h4>navigate</h4>
         <a href="about.html">about me</a>
         <a href="collections.html">collections</a>
         <a href="creative-direction.html">creative direction</a>
         <a href="modelling.html">modelling</a>
-        <a href="him.html">him</a>
         <a href="contact.html">contact me</a>
       </div>
       <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="https://www.instagram.com/solideoglorea/" target="_blank">Instagram</a>
+        <h4>connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank" title="@solideoglorea — art">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z"/>
+            <path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7"/>
+            <path d="M14.5 17.5 4.5 15"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/ellierinella/" target="_blank" title="@ellierinella — personal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <circle cx="12" cy="12" r="3"/>
+            <circle cx="17" cy="7" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
         <a href="mailto:[your@email.com]">[your@email.com]</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; Ellie Rinella 2025. All rights reserved.</p>
-
+      <p>&copy; ellie rinella 2025. all rights reserved.</p>
     </div>
   </footer>
 
