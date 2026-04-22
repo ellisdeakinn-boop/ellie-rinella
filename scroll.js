@@ -63,19 +63,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Hero circle — redraw when hero scrolls back into view
-    const heroCircle = document.querySelector('.hero-circle');
-    const heroPath   = document.querySelector('.hero-circle-path');
-    if (heroCircle && heroPath) {
+    const heroSection = document.querySelector('.home-hero');
+    const heroPath    = document.querySelector('.hero-circle-path');
+    if (heroSection && heroPath) {
+      let initialLoad = true;
       const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            if (initialLoad) { initialLoad = false; return; }
             heroPath.style.animation = 'none';
             void heroPath.offsetWidth;
             heroPath.style.animation = '';
           }
         });
       }, { threshold: 0.3 });
-      heroObserver.observe(heroCircle);
+      heroObserver.observe(heroSection);
     }
   }
 
