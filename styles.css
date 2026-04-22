@@ -482,7 +482,7 @@ footer {
 }
 
 .footer-social-link:hover svg { opacity: 0; }
-.footer-social-link:hover span { opacity: 1; }
+.footer-social-link:hover span { opacity: 0.8; }
 
 .footer-bottom {
   max-width: 1400px;
