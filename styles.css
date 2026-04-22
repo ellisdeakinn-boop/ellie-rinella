@@ -511,7 +511,7 @@ footer {
 .hero-circle-path {
   stroke-dasharray: 1800;
   stroke-dashoffset: 1800;
-  animation: drawHeroCircle 1.5s cubic-bezier(0.4, 0, 0.2, 1) 1s forwards;
+  animation: drawHeroCircle 2.4s cubic-bezier(0.4, 0, 0.2, 1) 1s forwards;
 }
 
 @keyframes drawHeroCircle {
