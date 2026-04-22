@@ -17,14 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const circle = document.querySelector('.hero-circle');
     const title  = document.querySelector('.home-hero-title');
     if (!circle || !title) return;
-    const tr  = title.getBoundingClientRect();
-    const pr  = title.parentElement.getBoundingClientRect();
-    const padX = tr.width  * 0.07;
-    const padY = tr.height * 0.12;
-    circle.style.left   = (tr.left - pr.left - padX) + 'px';
-    circle.style.top    = (tr.top  - pr.top  - padY) + 'px';
-    circle.style.width  = (tr.width  + padX * 2) + 'px';
-    circle.style.height = (tr.height + padY * 2) + 'px';
+
+    // Measure actual text bounds (not the full-width block box)
+    const range = document.createRange();
+    range.selectNodeContents(title);
+    const lineRects = Array.from(range.getClientRects()).filter(r => r.width > 10);
+    if (!lineRects.length) return;
+
+    const pr     = title.parentElement.getBoundingClientRect();
+    const left   = Math.min(...lineRects.map(r => r.left));
+    const top    = Math.min(...lineRects.map(r => r.top));
+    const right  = Math.max(...lineRects.map(r => r.right));
+    const bottom = Math.max(...lineRects.map(r => r.bottom));
+
+    const padX = (right - left) * 0.08;
+    const padY = (bottom - top) * 0.14;
+
+    circle.style.left   = (left - pr.left - padX) + 'px';
+    circle.style.top    = (top  - pr.top  - padY) + 'px';
+    circle.style.width  = (right - left + padX * 2) + 'px';
+    circle.style.height = (bottom - top  + padY * 2) + 'px';
   }
 
   document.fonts.ready.then(() => {
