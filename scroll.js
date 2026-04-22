@@ -44,13 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', positionHeroCircle);
   });
 
-  // Sketch underline on scroll for touch devices
+  // Sketch underline on scroll for touch devices — resets when out of view
   if (window.matchMedia('(hover: none)').matches) {
     const underlineObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('drawn');
-          underlineObserver.unobserve(entry.target);
+        } else {
+          // Reset so it redraws next time it scrolls back in
+          entry.target.classList.remove('drawn');
+          void entry.target.offsetWidth; // force reflow to restart animation
         }
       });
     }, { threshold: 0.4 });
@@ -58,6 +61,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.block-title, h2.section-heading').forEach(el => {
       underlineObserver.observe(el);
     });
+
+    // Hero circle — redraw when hero scrolls back into view
+    const heroCircle = document.querySelector('.hero-circle');
+    const heroPath   = document.querySelector('.hero-circle-path');
+    if (heroCircle && heroPath) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            heroPath.style.animation = 'none';
+            void heroPath.offsetWidth;
+            heroPath.style.animation = '';
+          }
+        });
+      }, { threshold: 0.3 });
+      heroObserver.observe(heroCircle);
+    }
   }
 
   // Footer social link hover — override inline opacity so CSS hover rules apply
