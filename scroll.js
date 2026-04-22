@@ -12,6 +12,22 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
+  // Sketch underline on scroll for touch devices
+  if (window.matchMedia('(hover: none)').matches) {
+    const underlineObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('drawn');
+          underlineObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.block-title, h2.section-heading').forEach(el => {
+      underlineObserver.observe(el);
+    });
+  }
+
   // Footer social link hover — override inline opacity so CSS hover rules apply
   document.querySelectorAll('.footer-social-link').forEach(link => {
     const svg = link.querySelector('svg');

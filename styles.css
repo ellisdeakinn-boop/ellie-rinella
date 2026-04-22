@@ -524,8 +524,17 @@ h2.section-heading::after {
 }
 
 .section-block:hover .block-title::after,
-h2.section-heading:hover::after {
+h2.section-heading:hover::after,
+.block-title.drawn::after,
+h2.section-heading.drawn::after {
   clip-path: inset(0 0% 0 0);
+}
+
+@media (hover: none) {
+  .block-title::after,
+  h2.section-heading::after {
+    transition: clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.35s;
+  }
 }
 
 /* ─── PLACEHOLDER IMAGES ─── */
