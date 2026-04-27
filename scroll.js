@@ -12,10 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // Position a single circle over its sibling h1 using actual text bounds
+  // Position a single circle over its sibling h1 (or custom target) using actual text bounds
   function positionCircle(circle) {
     const parent = circle.parentElement;
-    const title  = parent.querySelector('h1');
+    const targetSel = circle.dataset.target;
+    const title = (targetSel ? parent.querySelector(targetSel) : null) || parent.querySelector('h1');
     if (!title) return;
     const range = document.createRange();
     range.selectNodeContents(title);
@@ -60,13 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.4 });
 
-    document.querySelectorAll('.block-title, .work-title, .project-title').forEach(el => {
+    document.querySelectorAll('.block-title, .work-title, .project-title, .pg-slide-name').forEach(el => {
       underlineObserver.observe(el);
     });
 
     // Hero circles — redraw each when its section scrolls back into view
     document.querySelectorAll('.hero-circle').forEach(circle => {
-      const section = circle.closest('.home-hero, .page-hero');
+      const section = circle.closest('.home-hero, .page-hero, .ph-hero');
       if (!section) return;
       let initialLoad = true;
       const heroObserver = new IntersectionObserver((entries) => {

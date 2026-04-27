@@ -7,7 +7,7 @@
   --white: #ffffff;
   --gray: #888888;
   --light-gray: #f4f3f1;
-  --warm: #f9f7f4;
+  --warm: #efe9de;
   --border: #e2e0dc;
   --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-mono: 'Courier Prime', 'Courier New', monospace;
@@ -17,7 +17,7 @@
 html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
-  background: var(--white);
+  background: var(--warm);
   color: var(--black);
   font-family: var(--font-body);
   font-weight: 300;
@@ -34,7 +34,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--white);
+  background: var(--warm);
   border-bottom: 1px solid var(--border);
 }
 
@@ -531,13 +531,15 @@ footer {
 /* ─── SKETCH UNDERLINE ─── */
 .block-title,
 .work-title,
-.project-title {
+.project-title,
+.pg-slide-name {
   position: relative;
 }
 
 .block-title::after,
 .work-title::after,
-.project-title::after {
+.project-title::after,
+.pg-slide-name::after {
   content: '';
   position: absolute;
   left: 0;
@@ -555,16 +557,19 @@ footer {
 .section-block:hover .block-title::after,
 .work-card:hover .work-title::after,
 .project-card:hover .project-title::after,
+.pg-slide:hover .pg-slide-name::after,
 .block-title.drawn::after,
 .work-title.drawn::after,
-.project-title.drawn::after {
+.project-title.drawn::after,
+.pg-slide-name.drawn::after {
   clip-path: inset(0 0% 0 0);
 }
 
 @media (hover: none) {
   .block-title::after,
   .work-title::after,
-  .project-title::after {
+  .project-title::after,
+  .pg-slide-name::after {
     transition: clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.35s;
   }
 }

@@ -6,7 +6,7 @@
   <title>Ellie Rinella — Preview</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Courier+Prime:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     :root { --cream: #efe9de; }
@@ -79,10 +79,10 @@
     }
 
     .ph-statement em {
-      font-family: 'Instrument Serif', serif;
+      font-family: var(--font-display);
       font-style: italic;
-      font-weight: 400;
-      letter-spacing: 0;
+      font-weight: 500;
+      letter-spacing: -0.025em;
     }
 
     .ph-photos { position: relative; align-self: start; max-width: 360px; margin-left: auto; width: 100%; }
@@ -284,19 +284,14 @@
 
     .pg-slide.in-view .pg-slide-footer { opacity: 1; transform: translateY(0); }
 
-    .pg-slide-footer .name {
+    .pg-slide-name {
       font-family: var(--font-display);
       font-size: clamp(28px, 3vw, 44px);
       font-weight: 500;
       letter-spacing: -0.025em;
       color: var(--black);
       line-height: 1.05;
-    }
-
-    .pg-slide-footer .name em {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-weight: 400;
+      display: inline-block;
     }
 
     /* end card */
@@ -318,12 +313,6 @@
       line-height: 1.1;
       letter-spacing: -0.025em;
       margin-bottom: 24px;
-    }
-
-    .pg-end h2 em {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-weight: 400;
     }
 
     .pg-end a.btn {
@@ -416,8 +405,9 @@
   <!-- HERO -->
   <section class="ph-hero">
     <div class="ph-hero-inner">
-      <h1 class="ph-statement">
-        <em>Ellie Rinella</em> is a Christian abstract Artist / Creative Director based in Phoenix, AZ.
+      <h1 class="ph-statement" style="position:relative;">
+        <em class="ph-name">Ellie Rinella</em> is a Christian abstract Artist / Creative Director based in Phoenix, AZ.
+        <svg class="hero-circle" data-target=".ph-name" viewBox="0 0 600 240" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="hero-circle-path" d="M30,120 C35,30 185,5 300,8 C415,11 570,48 568,120 C566,198 415,232 300,230 C165,228 22,205 30,120 Z" stroke="#111111" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M38,118 C42,38 188,14 300,16 C413,18 561,52 559,124 C557,192 413,226 300,223" stroke="#111111" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.28" vector-effect="non-scaling-stroke"/></svg>
       </h1>
       <div class="ph-photos">
         <div class="portrait">
@@ -454,7 +444,7 @@
         </div>
       </div>
       <div class="pg-slide-footer">
-        <h2 class="name"><em>Soft Continuum</em></h2>
+        <h2 class="pg-slide-name">Soft Continuum</h2>
       </div>
     </section>
 
@@ -478,7 +468,7 @@
         </div>
       </div>
       <div class="pg-slide-footer">
-        <h2 class="name"><em>Velvet Shadow</em></h2>
+        <h2 class="pg-slide-name">Velvet Shadow</h2>
       </div>
     </section>
 
@@ -502,7 +492,7 @@
         </div>
       </div>
       <div class="pg-slide-footer">
-        <h2 class="name"><em>Studies in Light</em></h2>
+        <h2 class="pg-slide-name">Studies in Light</h2>
       </div>
     </section>
 
@@ -511,7 +501,7 @@
   <!-- END CARD -->
   <section class="pg-end">
     <div class="pg-end-inner">
-      <h2>see <em>every</em> available work, or commission something of your own.</h2>
+      <h2>see every available work, or commission something of your own.</h2>
       <a href="collections.html" class="btn">view all paintings</a>
     </div>
   </section>
