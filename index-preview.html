@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ellie Rinella — Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Courier+Prime:wght@400;700&family=DM+Sans:wght@300;400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root { --cream: #f1ede4; }
+
+    body { background: var(--cream); }
+
+    /* ─── EDITORIAL HERO ─── */
+    .preview-hero {
+      min-height: calc(100vh - 64px);
+      padding: 80px 40px 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--cream);
+    }
+
+    .preview-hero-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      flex: 1;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 60px;
+      align-items: start;
+      padding-top: 40px;
+    }
+
+    .preview-statement {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 76px);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      max-width: 900px;
+    }
+
+    .preview-statement em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .preview-hero-photo {
+      position: relative;
+      align-self: start;
+      transform: rotate(2deg);
+    }
+
+    .preview-hero-photo .photo-stack {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      margin-left: auto;
+    }
+
+    .preview-hero-photo img.portrait {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(0.15);
+    }
+
+    .preview-hero-photo .accent {
+      position: absolute;
+      bottom: -28px;
+      left: -36px;
+      width: 64%;
+      aspect-ratio: 4/5;
+      transform: rotate(-6deg);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    .preview-hero-photo .accent img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .preview-marquee {
+      border-top: 1px solid var(--black);
+      border-bottom: 1px solid var(--black);
+      overflow: hidden;
+      padding: 14px 0;
+    }
+
+    .preview-marquee-track {
+      display: flex;
+      animation: previewMarquee 22s linear infinite;
+      white-space: nowrap;
+      align-items: center;
+    }
+
+    .preview-marquee-track span {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      padding: 0 32px;
+    }
+
+    .preview-marquee-track span.cross {
+      font-family: serif;
+      font-size: 14px;
+      opacity: 0.6;
+      padding: 0 8px;
+    }
+
+    @keyframes previewMarquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ─── BOLD NUMBERED SERVICES ─── */
+    .services-block {
+      padding: 100px 40px 120px;
+      background: var(--cream);
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .services-block-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .services-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 36px;
+      display: block;
+    }
+
+    .services-headline {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(44px, 8vw, 124px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: var(--black);
+    }
+
+    .services-headline a {
+      color: var(--black);
+      text-decoration: none;
+      transition: opacity 0.2s;
+      display: inline;
+    }
+
+    .services-headline a:hover { opacity: 0.5; text-decoration: none; }
+
+    .services-headline .num {
+      font-family: var(--font-mono);
+      font-size: 0.35em;
+      font-weight: 400;
+      vertical-align: top;
+      margin-right: 0.15em;
+      letter-spacing: 0.02em;
+      position: relative;
+      top: 0.4em;
+    }
+
+    .services-tagline {
+      max-width: 560px;
+      margin: 80px auto 0;
+      text-align: center;
+    }
+
+    .services-tagline p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1.8;
+      color: var(--black);
+      margin-bottom: 18px;
+    }
+
+    .services-tagline .signature {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 28px;
+      letter-spacing: -0.01em;
+      color: var(--black);
+    }
+
+    /* ─── BIO STATEMENT ─── */
+    .preview-bio {
+      padding: 100px 40px;
+      background: var(--white);
+    }
+
+    .preview-bio-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .preview-bio-image {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: var(--light-gray);
+    }
+
+    .preview-bio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .preview-bio-text {
+      padding-top: 8px;
+    }
+
+    .preview-bio-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+      color: var(--gray);
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      margin-bottom: 36px;
+      display: block;
+    }
+
+    .preview-bio-meta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--gray);
+      line-height: 2;
+      margin-bottom: 32px;
+    }
+
+    .preview-bio-text p.body {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 1.8vw, 26px);
+      font-weight: 400;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      margin-bottom: 28px;
+    }
+
+    .preview-bio-text p.body em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .preview-bio-text .scroll {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--black);
+      margin-top: 40px;
+      display: block;
+    }
+
+    /* ─── FEATURED COLLECTION ─── */
+    .preview-collection {
+      padding: 100px 40px;
+      background: var(--cream);
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .preview-collection-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .preview-collection-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .preview-collection-head h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .preview-collection-head h2 em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .preview-collection-head a {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: lowercase;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .preview-collection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 32px;
+    }
+
+    .preview-work-card {
+      cursor: pointer;
+    }
+
+    .preview-work-card .work-image {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: var(--light-gray);
+      margin-bottom: 16px;
+    }
+
+    .preview-work-card .work-image > div {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .preview-work-card:hover .work-image > div { transform: scale(1.04); }
+
+    .preview-work-card .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .preview-work-card .work-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .preview-work-card .work-title em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .preview-work-card .work-year {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--gray);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .preview-hero-inner { grid-template-columns: 1fr; gap: 40px; padding-top: 20px; }
+      .preview-hero-photo { transform: none; margin-bottom: 40px; }
+      .preview-hero-photo .photo-stack { max-width: 220px; margin-left: 0; }
+      .preview-bio-inner { grid-template-columns: 1fr; gap: 40px; }
+      .preview-bio-image { display: none; }
+      .preview-collection-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+      .preview-collection-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+
+    @media (max-width: 600px) {
+      .preview-hero { padding: 40px 20px 0; }
+      .services-block { padding: 64px 20px 80px; }
+      .preview-bio { padding: 64px 20px; }
+      .preview-collection { padding: 64px 20px; }
+      .preview-collection-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
+    <a href="about.html">about me</a>
+    <a href="collections.html" class="nav-sub">collections</a>
+    <a href="creative-direction.html" class="nav-sub">creative direction</a>
+    <a href="modelling.html" class="nav-sub">modelling</a>
+    <a href="contact.html">contact me</a>
+  </div>
+
+  <!-- HEADER -->
+  <header style="background:var(--cream);border-bottom:1px solid rgba(0,0,0,0.08);">
+    <div class="header-inner">
+      <a href="index-preview.html" class="logo">solideoglorea</a>
+      <nav class="primary">
+        <a href="about.html">about</a>
+        <a href="index-preview.html#work" class="active">work</a>
+        <a href="contact.html">contact</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank" title="@solideoglorea — art">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z"/>
+            <path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7"/>
+            <path d="M14.5 17.5 4.5 15"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/ellierinella/" target="_blank" title="@ellierinella — personal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <circle cx="12" cy="12" r="3"/>
+            <circle cx="17" cy="7" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- EDITORIAL HERO -->
+  <section class="preview-hero">
+    <div class="preview-hero-inner">
+      <h1 class="preview-statement">
+        <em>Ellie Rinella</em> is a Christian abstract Artist, Creative Director, and Model based in Phoenix, AZ.
+      </h1>
+      <div class="preview-hero-photo">
+        <div class="photo-stack">
+          <img class="portrait" src="about-me-1.jpeg" alt="Ellie Rinella">
+          <div class="accent">
+            <img src="6B91283E-29B2-4892-8B37-A40787D80A03.jpeg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="preview-marquee">
+      <div class="preview-marquee-track">
+        <span>open to commissions and collaborations</span><span class="cross">✝</span>
+        <span>seek first his kingdom</span><span class="cross">✝</span>
+        <span>soli deo gloria</span><span class="cross">✝</span>
+        <span>open to commissions and collaborations</span><span class="cross">✝</span>
+        <span>seek first his kingdom</span><span class="cross">✝</span>
+        <span>soli deo gloria</span><span class="cross">✝</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOLD NUMBERED SERVICES -->
+  <section class="services-block" id="work">
+    <div class="services-block-inner">
+      <span class="services-eyebrow">— what i do</span>
+      <h2 class="services-headline">
+        <a href="collections.html"><span class="num">01.</span>Christian Abstract Art,</a>
+        <a href="creative-direction.html"><span class="num">02.</span>Creative Direction,</a>
+        <a href="modelling.html"><span class="num">03.</span>Modelling,</a>
+        <a href="contact-art.html"><span class="num">04.</span>Custom Commissions</a>
+      </h2>
+      <div class="services-tagline">
+        <p>painting from a place of faith, wonder, and a lifelong conversation with God.</p>
+        <span class="signature">soli deo gloria.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIO STATEMENT -->
+  <section class="preview-bio">
+    <div class="preview-bio-inner">
+      <div class="preview-bio-image">
+        <img src="hero.jpg" alt="Ellie in the studio">
+      </div>
+      <div class="preview-bio-text">
+        <span class="preview-bio-label">bio. statement.</span>
+        <p class="preview-bio-meta">
+          b. 2004. hood river, oregon.<br>
+          — lives/works in phoenix, az.
+        </p>
+        <p class="body">
+          [Introduce yourself in your own voice — where you're from, when you started painting, and what brought you to <em>Christian abstract</em> work. Keep it personal and grounded.]
+        </p>
+        <p class="body">
+          [Talk about what drives your practice — the spiritual dimension, the process, the feeling you're chasing. What does painting feel like as an act of <em>worship</em>?]
+        </p>
+        <span class="scroll">scroll for available work.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED COLLECTION -->
+  <section class="preview-collection">
+    <div class="preview-collection-inner">
+      <div class="preview-collection-head">
+        <h2><em>Featured</em> — [Collection Name]</h2>
+        <a href="collections.html">view all works →</a>
+      </div>
+      <div class="preview-collection-grid">
+
+        <a href="contact-art.html" class="preview-work-card">
+          <div class="work-image">
+            <div style="background:linear-gradient(145deg,#d6cfc4,#b8a99a);"></div>
+          </div>
+          <div class="meta-row">
+            <span class="work-title"><em>[Painting Title One]</em></span>
+            <span class="work-year">2024</span>
+          </div>
+        </a>
+
+        <a href="contact-art.html" class="preview-work-card">
+          <div class="work-image">
+            <div style="background:linear-gradient(145deg,#c9c3d6,#9e96b0);"></div>
+          </div>
+          <div class="meta-row">
+            <span class="work-title"><em>[Painting Title Two]</em></span>
+            <span class="work-year">2024</span>
+          </div>
+        </a>
+
+        <a href="contact-art.html" class="preview-work-card">
+          <div class="work-image">
+            <div style="background:linear-gradient(145deg,#d4c9be,#c2b4a6);"></div>
+          </div>
+          <div class="meta-row">
+            <span class="work-title"><em>[Painting Title Three]</em></span>
+            <span class="work-year">2025</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand-name">solideoglorea</span>
+        <p>Christian abstract art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
+      </div>
+      <div class="footer-col">
+        <h4>navigate</h4>
+        <a href="about.html">about me</a>
+        <a href="collections.html">collections</a>
+        <a href="creative-direction.html">creative direction</a>
+        <a href="modelling.html">modelling</a>
+        <a href="contact.html">contact me</a>
+      </div>
+      <div class="footer-col">
+        <h4>connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank" class="footer-social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z"/>
+            <path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7"/>
+            <path d="M14.5 17.5 4.5 15"/>
+          </svg>
+          <span style="opacity:0;pointer-events:none">art</span>
+        </a>
+        <a href="https://www.instagram.com/ellierinella/" target="_blank" class="footer-social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <circle cx="12" cy="12" r="3"/>
+            <circle cx="17" cy="7" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+          <span style="opacity:0;pointer-events:none">personal</span>
+        </a>
+        <a href="mailto:me@ellierinella.com">me@ellierinella.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ellie rinella 2025. all rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scroll.js"></script>
+</body>
+</html>
