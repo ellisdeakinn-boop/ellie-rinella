@@ -271,6 +271,49 @@
 
     .pg-arrow:hover { opacity: 0.5; }
 
+    /* Editorial swipe hint (mobile only) */
+    .pg-swipe-hint {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      max-width: 1400px;
+      margin: 24px auto 0;
+      padding: 0 20px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: -0.005em;
+      color: var(--black);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .pg-swipe-hint::before,
+    .pg-swipe-hint::after {
+      content: '';
+      flex: 0 0 28px;
+      height: 1px;
+      background: var(--black);
+      opacity: 0.4;
+    }
+
+    .pg-swipe-hint .arrow {
+      display: inline-block;
+      animation: swipeNudge 1.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+      font-style: normal;
+    }
+
+    @keyframes swipeNudge {
+      0%, 100% { transform: translateX(0); opacity: 0.6; }
+      50% { transform: translateX(10px); opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pg-swipe-hint .arrow { animation: none; }
+    }
+
     /* Footer label of slide (collection name, like "Velvet Shadow") */
     .pg-slide-footer {
       max-width: 1400px;
@@ -386,6 +429,7 @@
 
       .pg-arrows { display: none; }
       .pg-slide-name { font-size: 28px; }
+      .pg-swipe-hint { display: flex; }
     }
 
     @media (max-width: 600px) {
@@ -473,6 +517,10 @@
           </div>
         </div>
       </div>
+      <div class="pg-swipe-hint">
+        <span>swipe</span>
+        <span class="arrow">→</span>
+      </div>
       <div class="pg-slide-footer">
         <h2 class="pg-slide-name">Soft Continuum</h2>
       </div>
@@ -497,6 +545,10 @@
           </div>
         </div>
       </div>
+      <div class="pg-swipe-hint">
+        <span>swipe</span>
+        <span class="arrow">→</span>
+      </div>
       <div class="pg-slide-footer">
         <h2 class="pg-slide-name">Velvet Shadow</h2>
       </div>
@@ -520,6 +572,10 @@
             <button class="pg-arrow" aria-label="next">→</button>
           </div>
         </div>
+      </div>
+      <div class="pg-swipe-hint">
+        <span>swipe</span>
+        <span class="arrow">→</span>
       </div>
       <div class="pg-slide-footer">
         <h2 class="pg-slide-name">Studies in Light</h2>
