@@ -14,15 +14,8 @@
     body { background: var(--cream); }
 
     /* ─── HEADER OVERRIDE ─── */
-    header {
-      background: var(--cream);
-      border-bottom: none;
-    }
-
-    .header-inner {
-      padding: 0 32px;
-      height: 56px;
-    }
+    header { background: var(--cream); border-bottom: none; }
+    .header-inner { padding: 0 32px; height: 56px; }
 
     .preview-logo {
       display: inline-flex;
@@ -43,12 +36,7 @@
       display: inline-block;
     }
 
-    nav.preview-nav {
-      display: flex;
-      gap: 36px;
-      margin-left: 60px;
-    }
-
+    nav.preview-nav { display: flex; gap: 36px; margin-left: 60px; }
     nav.preview-nav a {
       font-family: var(--font-display);
       font-size: 14px;
@@ -57,32 +45,27 @@
       text-decoration: none;
       letter-spacing: -0.01em;
     }
-
     nav.preview-nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-    .header-right {
-      margin-left: auto;
-    }
+    .header-right { margin-left: auto; }
 
     /* ─── HERO ─── */
     .ph-hero {
-      padding: 80px 32px 0;
+      padding: 80px 32px 80px;
       min-height: calc(100vh - 56px);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
     }
 
     .ph-hero-inner {
       max-width: 1400px;
       margin: 0 auto;
       width: 100%;
-      flex: 1;
       display: grid;
       grid-template-columns: 1.6fr 1fr;
       gap: 60px;
       align-items: start;
-      padding-top: 60px;
     }
 
     .ph-statement {
@@ -102,273 +85,213 @@
       letter-spacing: 0;
     }
 
-    .ph-photos {
-      position: relative;
-      align-self: start;
-      max-width: 360px;
-      margin-left: auto;
-      width: 100%;
-    }
-
-    .ph-photos .portrait {
-      position: relative;
-      z-index: 2;
-      width: 78%;
-      margin-left: auto;
-      display: block;
-      aspect-ratio: 4/5;
-    }
-
-    .ph-photos .portrait img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(0.4) contrast(1.05);
-      display: block;
-    }
-
+    .ph-photos { position: relative; align-self: start; max-width: 360px; margin-left: auto; width: 100%; }
+    .ph-photos .portrait { position: relative; z-index: 2; width: 78%; margin-left: auto; aspect-ratio: 4/5; }
+    .ph-photos .portrait img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.4) contrast(1.05); display: block; }
     .ph-photos .accent {
-      position: absolute;
-      left: 0;
-      bottom: -20px;
-      width: 52%;
-      aspect-ratio: 4/5;
-      z-index: 1;
-      transform: rotate(-2deg);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      position: absolute; left: 0; bottom: -20px; width: 52%; aspect-ratio: 4/5; z-index: 1;
+      transform: rotate(-2deg); box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
+    .ph-photos .accent img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .ph-photos .accent img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* ─── MARQUEE ─── */
-    .ph-marquee {
-      border-top: 1px solid var(--black);
-      border-bottom: 1px solid var(--black);
-      overflow: hidden;
-      padding: 11px 0;
-      margin-top: 60px;
-    }
-
-    .ph-marquee-track {
-      display: flex;
-      animation: phMarquee 28s linear infinite;
-      white-space: nowrap;
-      align-items: center;
-    }
-
-    .ph-marquee-track span {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      color: var(--black);
-      padding: 0 14px;
-    }
-
-    .ph-marquee-track .sep {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      opacity: 0.6;
-      padding: 0 4px;
-    }
-
-    @keyframes phMarquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* ─── PAINTINGS SECTION ─── */
-    .ph-paintings {
-      padding: 100px 32px 120px;
-      background: var(--cream);
-    }
-
-    .ph-paintings-inner {
+    .ph-scroll-cue {
       max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .ph-paintings-head {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 48px;
-      margin-bottom: 56px;
-      align-items: baseline;
-    }
-
-    .ph-paintings-head .year {
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 500;
+      margin: 60px auto 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
       color: var(--black);
+      opacity: 0.55;
     }
 
-    .ph-paintings-head .title {
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--black);
-      letter-spacing: -0.01em;
+    .ph-scroll-cue::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--black);
+      opacity: 0.3;
     }
 
-    .ph-paintings-head .title em {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .ph-paintings-head .subtitle {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--black);
-      opacity: 0.7;
-      margin-top: 6px;
-      grid-column: 2;
-    }
-
-    .ph-paintings-stage {
+    /* ─── PAINTING GALLERY (SWIPE / SCROLL-SNAP) ─── */
+    .pg-gallery {
       position: relative;
     }
 
-    .ph-paintings-track {
-      display: grid;
-      grid-template-columns: 1.2fr 0.85fr 1.1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .ph-painting {
-      display: block;
-    }
-
-    .ph-painting:nth-child(1) { padding-top: 0; }
-    .ph-painting:nth-child(2) { padding-top: 80px; }
-    .ph-painting:nth-child(3) { padding-top: 30px; }
-
-    .ph-painting .img-wrap {
-      width: 100%;
-      overflow: hidden;
-      background: var(--light-gray);
-    }
-
-    .ph-painting:nth-child(1) .img-wrap { aspect-ratio: 3/4; }
-    .ph-painting:nth-child(2) .img-wrap { aspect-ratio: 1/1; }
-    .ph-painting:nth-child(3) .img-wrap { aspect-ratio: 4/5; }
-
-    .ph-painting .img-wrap > div,
-    .ph-painting .img-wrap > img {
-      width: 100%;
-      height: 100%;
-      transition: transform 0.6s ease;
-    }
-
-    .ph-painting:hover .img-wrap > div,
-    .ph-painting:hover .img-wrap > img { transform: scale(1.03); }
-
-    .ph-painting .label {
-      margin-top: 18px;
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--black);
-      letter-spacing: -0.01em;
-    }
-
-    .ph-painting .label em {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .ph-arrows {
-      display: flex;
-      justify-content: space-between;
-      pointer-events: none;
-      position: absolute;
-      top: 50%;
-      left: -8px;
-      right: -8px;
-      transform: translateY(-50%);
-      z-index: 5;
-    }
-
-    .ph-arrow {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--cream);
-      border: 1px solid rgba(0,0,0,0.15);
+    .pg-section {
+      min-height: 100vh;
+      padding: 60px 32px;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      pointer-events: auto;
-      font-family: var(--font-display);
-      font-size: 16px;
-      color: var(--black);
-      transition: background 0.2s;
+      position: relative;
     }
 
-    .ph-arrow:hover { background: var(--black); color: var(--cream); }
-
-    /* ─── CATEGORY ROW ─── */
-    .ph-categories {
-      border-top: 1px solid rgba(0,0,0,0.12);
-      padding: 80px 32px;
-    }
-
-    .ph-categories-inner {
+    .pg-stage {
       max-width: 1400px;
+      width: 100%;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 80px;
+      align-items: center;
     }
 
-    .ph-category {
-      display: block;
-      text-decoration: none;
-      color: var(--black);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ph-category .cat-image {
-      aspect-ratio: 16/10;
+    .pg-image {
+      width: 100%;
+      aspect-ratio: 4/5;
       overflow: hidden;
       background: var(--light-gray);
-      margin-bottom: 16px;
+      transform: translateX(80px);
+      opacity: 0;
+      transition: transform 1.1s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 1.1s ease;
     }
 
-    .ph-category .cat-image > div,
-    .ph-category .cat-image > img {
-      width: 100%;
-      height: 100%;
-      transition: transform 0.6s ease;
+    .pg-image > div, .pg-image > img {
+      width: 100%; height: 100%;
+      transition: transform 8s ease-out;
     }
 
-    .ph-category:hover .cat-image > div,
-    .ph-category:hover .cat-image > img { transform: scale(1.03); }
+    .pg-section:nth-child(even) .pg-stage { direction: rtl; }
+    .pg-section:nth-child(even) .pg-stage > * { direction: ltr; }
+    .pg-section:nth-child(even) .pg-image { transform: translateX(-80px); }
 
-    .ph-category .cat-label {
-      font-family: var(--font-display);
-      font-size: clamp(20px, 2vw, 28px);
-      font-weight: 500;
-      letter-spacing: -0.02em;
+    .pg-info {
+      transform: translateY(40px);
+      opacity: 0;
+      transition: transform 0.95s cubic-bezier(0.22, 0.61, 0.36, 1) 0.18s, opacity 0.95s ease 0.18s;
+    }
+
+    .pg-section.in-view .pg-image,
+    .pg-section.in-view .pg-info {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+
+    .pg-section.in-view .pg-image > div,
+    .pg-section.in-view .pg-image > img {
+      transform: scale(1.06);
+    }
+
+    .pg-index {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       color: var(--black);
+      opacity: 0.55;
+      margin-bottom: 24px;
+      display: block;
     }
 
-    .ph-category .cat-label em {
+    .pg-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .pg-title em {
       font-family: 'Instrument Serif', serif;
       font-style: italic;
       font-weight: 400;
     }
+
+    .pg-meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      line-height: 1.85;
+      opacity: 0.75;
+      margin-bottom: 28px;
+    }
+
+    .pg-cta {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .pg-cta:hover { opacity: 0.6; }
+
+    /* progress rail */
+    .pg-rail {
+      position: fixed;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 30;
+      mix-blend-mode: difference;
+    }
+
+    .pg-rail-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      background: transparent;
+      transition: background 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .pg-rail-dot.active { background: #fff; transform: scale(1.4); }
+
+    /* end card */
+    .pg-end {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 32px;
+      text-align: center;
+    }
+
+    .pg-end-inner { max-width: 720px; }
+
+    .pg-end h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+
+    .pg-end h2 em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .pg-end a.btn {
+      display: inline-block;
+      margin-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: lowercase;
+      padding: 14px 36px;
+      border: 1px solid var(--black);
+      color: var(--black);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .pg-end a.btn:hover { background: var(--black); color: var(--cream); }
 
     /* ─── FOOTER OVERRIDE ─── */
     footer { background: var(--cream); color: var(--black); border-top: 1px solid rgba(0,0,0,0.12); }
@@ -376,23 +299,26 @@
     .footer-brand-name, .footer-col h4, .footer-col a, .footer-col p, .footer-brand p { color: var(--black); opacity: 0.6; }
     .footer-bottom p { color: var(--black); opacity: 0.4; }
 
+    /* ─── REDUCED MOTION ─── */
+    @media (prefers-reduced-motion: reduce) {
+      .pg-image, .pg-info { transition: none; transform: none; opacity: 1; }
+      .pg-image > div, .pg-image > img { transition: none; }
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       nav.preview-nav { display: none; }
-      .ph-hero-inner { grid-template-columns: 1fr; gap: 40px; padding-top: 30px; }
-      .ph-photos { max-width: 220px; margin-left: 0; margin-top: 16px; }
-      .ph-paintings-track { grid-template-columns: 1fr; gap: 40px; }
-      .ph-painting:nth-child(2),
-      .ph-painting:nth-child(3) { padding-top: 0; }
-      .ph-categories-inner { grid-template-columns: 1fr; }
-      .ph-arrows { display: none; }
+      .ph-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .ph-photos { max-width: 220px; margin-left: 0; }
+      .pg-stage { grid-template-columns: 1fr; gap: 32px; }
+      .pg-section:nth-child(even) .pg-stage { direction: ltr; }
+      .pg-section { padding: 80px 20px; }
+      .pg-rail { right: 12px; }
     }
 
     @media (max-width: 600px) {
-      .ph-hero { padding: 40px 20px 0; min-height: auto; }
+      .ph-hero { padding: 40px 20px 40px; min-height: auto; }
       .ph-statement { font-size: 32px; }
-      .ph-paintings { padding: 64px 20px 80px; }
-      .ph-categories { padding: 56px 20px; }
     }
   </style>
 </head>
@@ -448,71 +374,92 @@
         </div>
       </div>
     </div>
-    <div class="ph-marquee">
-      <div class="ph-marquee-track">
-        <span>Open to commissions and creative collaborations</span><span class="sep">✦</span>
-        <span>Open to commissions and creative collaborations</span><span class="sep">✦</span>
-        <span>Open to commissions and creative collaborations</span><span class="sep">✦</span>
-        <span>Open to commissions and creative collaborations</span><span class="sep">✦</span>
-        <span>Open to commissions and creative collaborations</span><span class="sep">✦</span>
-        <span>Open to commissions and creative collaborations</span><span class="sep">✦</span>
-      </div>
-    </div>
+    <div class="ph-scroll-cue">scroll for selected paintings</div>
   </section>
 
-  <!-- PAINTINGS / FEATURED COLLECTION -->
-  <section class="ph-paintings">
-    <div class="ph-paintings-inner">
-      <div class="ph-paintings-head">
-        <span class="year">2025</span>
-        <div>
-          <span class="title"><em>[Collection Name]</em></span>
-          <p class="subtitle">[Short context line — e.g. exhibition, fair, or where these were made.]</p>
+  <!-- PAINTING GALLERY (SCROLL-TRIGGERED REVEAL) -->
+  <div class="pg-gallery">
+
+    <section class="pg-section" data-pg="01">
+      <div class="pg-stage">
+        <div class="pg-image">
+          <div style="background:linear-gradient(145deg,#c2adb3,#7a4f56);"></div>
+        </div>
+        <div class="pg-info">
+          <span class="pg-index">01 / Painting</span>
+          <h2 class="pg-title"><em>[Painting Title One]</em></h2>
+          <p class="pg-meta">72 × 96 in. — Oil on canvas — 2024</p>
+          <a href="contact-art.html" class="pg-cta">inquire to purchase →</a>
         </div>
       </div>
+    </section>
 
-      <div class="ph-paintings-stage">
-        <div class="ph-paintings-track">
-
-          <a class="ph-painting" href="collections.html">
-            <div class="img-wrap">
-              <div style="background:linear-gradient(145deg,#c2adb3,#7a4f56);"></div>
-            </div>
-            <p class="label"><em>[Painting Title One]</em></p>
-          </a>
-
-          <a class="ph-painting" href="collections.html">
-            <div class="img-wrap">
-              <div style="background:linear-gradient(145deg,#c9c3d6,#9e96b0);"></div>
-            </div>
-            <p class="label"><em>[Painting Title Two]</em></p>
-          </a>
-
-          <a class="ph-painting" href="collections.html">
-            <div class="img-wrap">
-              <div style="background:linear-gradient(145deg,#5a7791,#28465e);"></div>
-            </div>
-            <p class="label"><em>[Painting Title Three]</em></p>
-          </a>
-
+    <section class="pg-section" data-pg="02">
+      <div class="pg-stage">
+        <div class="pg-image">
+          <div style="background:linear-gradient(145deg,#c9c3d6,#9e96b0);"></div>
         </div>
-        <div class="ph-arrows">
-          <button class="ph-arrow" aria-label="previous">←</button>
-          <button class="ph-arrow" aria-label="next">→</button>
+        <div class="pg-info">
+          <span class="pg-index">02 / Painting</span>
+          <h2 class="pg-title"><em>[Painting Title Two]</em></h2>
+          <p class="pg-meta">60 × 48 in. — Oil on linen — 2024</p>
+          <a href="contact-art.html" class="pg-cta">inquire to purchase →</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES TEASER -->
-  <section class="ph-categories">
-    <div class="ph-categories-inner" style="grid-template-columns: 1fr;">
-      <a class="ph-category" href="services-preview.html">
-        <div class="cat-image">
-          <div style="background:linear-gradient(145deg,#e8d96a,#c9b332);"></div>
+    <section class="pg-section" data-pg="03">
+      <div class="pg-stage">
+        <div class="pg-image">
+          <div style="background:linear-gradient(145deg,#5a7791,#28465e);"></div>
         </div>
-        <span class="cat-label"><em>Services</em> — creative direction & social media management →</span>
-      </a>
+        <div class="pg-info">
+          <span class="pg-index">03 / Painting</span>
+          <h2 class="pg-title"><em>[Painting Title Three]</em></h2>
+          <p class="pg-meta">48 × 36 in. — Acrylic, oil on canvas — 2025</p>
+          <a href="contact-art.html" class="pg-cta">inquire to purchase →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pg-section" data-pg="04">
+      <div class="pg-stage">
+        <div class="pg-image">
+          <div style="background:linear-gradient(145deg,#d8c97a,#9e8d3d);"></div>
+        </div>
+        <div class="pg-info">
+          <span class="pg-index">04 / Painting</span>
+          <h2 class="pg-title"><em>[Painting Title Four]</em></h2>
+          <p class="pg-meta">36 × 36 in. — Oil on canvas — 2024</p>
+          <a href="contact-art.html" class="pg-cta">inquire to purchase →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pg-section" data-pg="05">
+      <div class="pg-stage">
+        <div class="pg-image">
+          <div style="background:linear-gradient(145deg,#bba893,#7d6a54);"></div>
+        </div>
+        <div class="pg-info">
+          <span class="pg-index">05 / Painting</span>
+          <h2 class="pg-title"><em>[Painting Title Five]</em></h2>
+          <p class="pg-meta">30 × 24 in. — Oil on linen — 2025</p>
+          <a href="contact-art.html" class="pg-cta">inquire to purchase →</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- PROGRESS RAIL -->
+  <div class="pg-rail" id="pgRail"></div>
+
+  <!-- END CARD -->
+  <section class="pg-end">
+    <div class="pg-end-inner">
+      <h2>see <em>every</em> available work, or commission something of your own.</h2>
+      <a href="collections.html" class="btn">view all paintings</a>
     </div>
   </section>
 
@@ -557,5 +504,40 @@
   </footer>
 
   <script src="scroll.js"></script>
+  <script>
+    // Painting gallery: scroll-triggered reveal + progress rail
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.pg-section');
+      const rail = document.getElementById('pgRail');
+
+      // build progress rail dots
+      sections.forEach((s, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'pg-rail-dot';
+        dot.dataset.idx = i;
+        dot.addEventListener('click', () => {
+          s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+        rail.appendChild(dot);
+      });
+
+      const dots = rail.querySelectorAll('.pg-rail-dot');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const idx = Array.from(sections).indexOf(entry.target);
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            dots.forEach(d => d.classList.remove('active'));
+            if (dots[idx]) dots[idx].classList.add('active');
+          } else if (entry.intersectionRatio < 0.05) {
+            entry.target.classList.remove('in-view');
+          }
+        });
+      }, { threshold: [0, 0.35, 0.6] });
+
+      sections.forEach(s => observer.observe(s));
+    });
+  </script>
 </body>
 </html>
