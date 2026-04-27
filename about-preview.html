@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Ellie Rinella</title>
+  <title>About - Ellie Rinella</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
@@ -188,15 +188,21 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       nav.preview-nav { display: none; }
-      .ab-body, .ab-him-inner { grid-template-columns: 1fr; gap: 40px; }
+      .ab-body, .ab-him-inner { grid-template-columns: 1fr; gap: 32px; }
       .ab-photo { position: static; aspect-ratio: 3/2; }
+      .ab-photo img { object-position: center 80%; }
       .ab-him-image { aspect-ratio: 3/2; }
     }
 
     @media (max-width: 600px) {
-      .ab-hero { padding: 40px 20px 40px; }
-      .ab-body { padding: 40px 20px 64px; }
-      .ab-him { padding: 64px 20px; }
+      .ab-hero { padding: 32px 20px 32px; }
+      .ab-statement { font-size: clamp(28px, 9vw, 40px); line-height: 1.15; }
+      .ab-body { padding: 32px 20px 56px; }
+      .ab-text p { font-size: 16px; line-height: 1.6; margin-bottom: 22px; }
+      .ab-him { padding: 56px 20px; }
+      .ab-him-text h2 { font-size: clamp(24px, 7vw, 32px); }
+      .ab-him-text p { font-size: 15px; line-height: 1.6; }
+      .ab-him-text blockquote { font-size: 15px; padding-left: 18px; }
     }
   </style>
 </head>
@@ -239,9 +245,9 @@
 
   <!-- HERO -->
   <section class="ab-hero">
-    <span class="ab-eyebrow">— about</span>
+    <span class="ab-eyebrow">- about</span>
     <h1 class="ab-statement" style="position:relative;">
-      <em class="ab-name">Ellie Rinella</em> paints abstract works rooted in Christian faith — pieces made to point past themselves, to the Maker.
+      <em class="ab-name">Ellie Rinella</em> paints abstract works rooted in Christian faith - pieces made to point past themselves, to the Maker.
       <svg class="hero-circle" data-target=".ab-name" viewBox="0 0 600 240" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="hero-circle-path" d="M30,120 C35,30 185,5 300,8 C415,11 570,48 568,120 C566,198 415,232 300,230 C165,228 22,205 30,120 Z" stroke="#111111" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M38,118 C42,38 188,14 300,16 C413,18 561,52 559,124 C557,192 413,226 300,223" stroke="#111111" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.28" vector-effect="non-scaling-stroke"/></svg>
     </h1>
   </section>
@@ -254,16 +260,16 @@
     <div class="ab-text">
       <p class="meta">
         b. 2004. hood river, oregon.<br>
-        — lives/works in phoenix, az.
+        - lives/works in phoenix, az.
       </p>
       <p>
-        [Open with how you came to painting — the moment, the season, what was happening in your life. Where Hood River shaped you, and what brought you to Phoenix.]
+        [Open with how you came to painting - the moment, the season, what was happening in your life. Where Hood River shaped you, and what brought you to Phoenix.]
       </p>
       <p>
-        [The middle of your story — what kind of work you make now, the materials and scale, what a day in the studio looks like. The kinds of commissions you take and the brands you've worked with.]
+        [The middle of your story - what kind of work you make now, the materials and scale, what a day in the studio looks like. The kinds of commissions you take and the brands you've worked with.]
       </p>
       <p>
-        [Close on what drives all of it — faith, family, the people you make work for. End on a line that feels like you.]
+        [Close on what drives all of it - faith, family, the people you make work for. End on a line that feels like you.]
       </p>
     </div>
   </section>
@@ -275,16 +281,16 @@
         <img src="about-me-him.jpg" alt="">
       </div>
       <div class="ab-him-text">
-        <span class="label">— Him</span>
+        <span class="label">- Him</span>
         <h2>Soli Deo Gloria.</h2>
         <p>
-          [Speak to the heart of the work — that the painting, the studio, the day, are all worship. Why faith isn't a layer on top of the work but the soil it grows from.]
+          [Speak to the heart of the work - that the painting, the studio, the day, are all worship. Why faith isn't a layer on top of the work but the soil it grows from.]
         </p>
         <blockquote>
-          "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters." — Colossians 3:23
+          "Whatever you do, work at it with all your heart, as working for the Lord, not for human masters." - Colossians 3:23
         </blockquote>
         <p>
-          [Close on a personal line — what scripture, season, or person you keep returning to. Make it feel honest, not preached.]
+          [Close on a personal line - what scripture, season, or person you keep returning to. Make it feel honest, not preached.]
         </p>
       </div>
     </div>

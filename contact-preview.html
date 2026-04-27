@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Ellie Rinella</title>
+  <title>Contact - Ellie Rinella</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
@@ -203,13 +203,22 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       nav.preview-nav { display: none; }
-      .ct-body { grid-template-columns: 1fr; gap: 40px; }
-      .ct-row { grid-template-columns: 1fr; gap: 28px; }
+      .ct-body { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px 80px; }
+      .ct-row { grid-template-columns: 1fr; gap: 24px; }
+      .service-row { grid-template-columns: 1fr; gap: 6px; }
     }
-
     @media (max-width: 600px) {
-      .ct-hero { padding: 40px 20px 20px; }
-      .ct-body { padding: 40px 20px 64px; }
+      .ct-hero { padding: 32px 20px 16px; }
+      .ct-statement { font-size: clamp(28px, 9vw, 40px); line-height: 1.15; }
+      .ct-body { padding: 32px 20px 56px; gap: 32px; }
+      .ct-form input, .ct-form textarea, .ct-form select { font-size: 16px; }
+      .ct-form button { width: 100%; padding: 16px 24px; text-align: center; }
+      .ct-form form { gap: 24px; }
+      .ct-side .item { font-size: 16px; }
+      .process-step-text { font-size: 13px; }
+      .service-row span:first-child { font-size: 13px; }
+    }
+.ct-body { padding: 40px 20px 64px; }
     }
   </style>
 </head>
@@ -252,7 +261,7 @@
 
   <!-- HERO -->
   <section class="ct-hero">
-    <span class="ct-eyebrow">— contact</span>
+    <span class="ct-eyebrow">- contact</span>
     <h1 class="ct-statement" style="position:relative;">
       Reach out about a <em class="ct-name">painting</em>, a commission, or creative work.
       <svg class="hero-circle" data-target=".ct-name" viewBox="0 0 600 240" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="hero-circle-path" d="M30,120 C35,30 185,5 300,8 C415,11 570,48 568,120 C566,198 415,232 300,230 C165,228 22,205 30,120 Z" stroke="#111111" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="M38,118 C42,38 188,14 300,16 C413,18 561,52 559,124 C557,192 413,226 300,223" stroke="#111111" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.28" vector-effect="non-scaling-stroke"/></svg>
@@ -262,9 +271,9 @@
   <!-- BODY -->
   <section class="ct-body">
     <aside class="ct-side">
-      <span class="label">— direct</span>
+      <span class="label">- direct</span>
       <a class="item" href="mailto:me@ellierinella.com">me@ellierinella.com</a>
-      <span class="label">— social</span>
+      <span class="label">- social</span>
       <a class="item" href="https://www.instagram.com/solideoglorea/" target="_blank">@solideoglorea</a>
       <a class="item" href="https://www.instagram.com/ellierinella/" target="_blank">@ellierinella</a>
       <p>

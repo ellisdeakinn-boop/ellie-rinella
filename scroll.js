@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', positionAllCircles);
   });
 
-  // Sketch underline on scroll for touch devices — resets when out of view
+  // Sketch underline on scroll for touch devices - resets when out of view
   if (window.matchMedia('(hover: none)').matches) {
     const underlineObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       underlineObserver.observe(el);
     });
 
-    // Hero circles — redraw each when its section scrolls back into view
+    // Hero circles - redraw each when its section scrolls back into view
     document.querySelectorAll('.hero-circle').forEach(circle => {
       const section = circle.closest('.home-hero, .page-hero, .ph-hero');
       if (!section) return;
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Footer social link hover — override inline opacity so CSS hover rules apply
+  // Footer social link hover - override inline opacity so CSS hover rules apply
   document.querySelectorAll('.footer-social-link').forEach(link => {
     const svg = link.querySelector('svg');
     const span = link.querySelector('span');

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — Ellie Rinella</title>
+  <title>Services - Ellie Rinella</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
@@ -202,14 +202,25 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       nav.sv-nav { display: none; }
-      .sv-headline { font-size: clamp(40px, 12vw, 80px); }
+      .sv-headline { font-size: clamp(40px, 12vw, 80px); line-height: 0.96; }
       .sv-tagline { margin-top: 48px; padding-bottom: 40px; }
+      .sv-headline .num { font-size: 0.36em; }
     }
 
     @media (max-width: 600px) {
       .sv-hero { padding: 24px 20px 0; }
-      .sv-tagline { padding: 0 20px 32px; }
+      .sv-headline { font-size: clamp(36px, 13vw, 60px); letter-spacing: -0.04em; }
+      .sv-tagline { padding: 0 20px 32px; max-width: 100%; }
+      .sv-tagline p { font-size: 10px; letter-spacing: 0.16em; }
       .sv-back { padding: 24px 20px 56px; }
+    }
+
+    /* Touch devices: persistent underline so taps read as links */
+    @media (hover: none) {
+      .sv-headline a {
+        background-size: 100% 2px;
+        opacity: 0.92;
+      }
     }
   </style>
 </head>
