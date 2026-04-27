@@ -105,9 +105,22 @@
       color: var(--ink);
       text-decoration: none;
       transition: opacity 0.18s ease;
+      cursor: pointer;
+      position: relative;
+      display: inline;
+      background-image: linear-gradient(currentColor, currentColor);
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 3px;
+      transition: background-size 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.18s ease;
+      padding-bottom: 4px;
     }
 
-    .sv-headline a:hover { opacity: 0.55; text-decoration: none; }
+    .sv-headline a:hover {
+      opacity: 1;
+      text-decoration: none;
+      background-size: 100% 3px;
+    }
 
     .sv-headline .num {
       font-family: var(--font-display);
