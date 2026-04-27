@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Ellie Rinella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Courier+Prime:wght@400;700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --yellow: #f0e87a;
+      --ink: #111111;
+    }
+
+    body { background: var(--yellow); color: var(--ink); }
+
+    /* paper grain */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+        radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+      background-size: 3px 3px, 7px 7px;
+      background-position: 0 0, 1px 2px;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      opacity: 0.5;
+      z-index: 1;
+    }
+
+    /* ─── HEADER OVERRIDE ─── */
+    header {
+      background: var(--yellow);
+      border-bottom: none;
+      position: relative;
+      z-index: 5;
+    }
+
+    .header-inner { padding: 0 32px; height: 56px; }
+
+    .sv-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+
+    .sv-logo::before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    nav.sv-nav {
+      display: flex;
+      gap: 36px;
+      margin-left: 60px;
+    }
+
+    nav.sv-nav a {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    nav.sv-nav a.active {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    nav.sv-nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .header-right { margin-left: auto; }
+
+    /* ─── HERO TYPE BLOCK ─── */
+    .sv-hero {
+      padding: 40px 32px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sv-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sv-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 28px;
+      display: block;
+    }
+
+    .sv-headline {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(48px, 9vw, 138px);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      color: var(--ink);
+      text-transform: capitalize;
+    }
+
+    .sv-headline a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity 0.18s ease;
+    }
+
+    .sv-headline a:hover { opacity: 0.55; text-decoration: none; }
+
+    .sv-headline .num {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.32em;
+      vertical-align: top;
+      margin-right: 0.18em;
+      letter-spacing: 0;
+      position: relative;
+      top: 0.5em;
+      display: inline-block;
+    }
+
+    .sv-headline .comma { color: var(--ink); }
+
+    /* ─── ESTABLISHED + SIGNATURE ─── */
+    .sv-tagline {
+      max-width: 460px;
+      margin: 80px auto 0;
+      text-align: center;
+      padding-bottom: 64px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sv-tagline p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+
+    .sv-signature {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: 38px;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      display: inline-block;
+      transform: rotate(-2deg);
+    }
+
+    /* ─── BACK LINK ─── */
+    .sv-back {
+      padding: 32px 32px 80px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sv-back a {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 4px;
+    }
+
+    .sv-back a em {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .sv-back a:hover { opacity: 0.6; }
+
+    /* ─── FOOTER OVERRIDE ─── */
+    footer {
+      background: var(--yellow);
+      color: var(--ink);
+      border-top: 1px solid rgba(0,0,0,0.18);
+      position: relative;
+      z-index: 2;
+    }
+    footer .footer-inner { border-bottom-color: rgba(0,0,0,0.18); }
+    .footer-brand-name, .footer-col h4, .footer-col a, .footer-col p, .footer-brand p { color: var(--ink); opacity: 0.7; }
+    .footer-bottom p { color: var(--ink); opacity: 0.5; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav.sv-nav { display: none; }
+      .sv-headline { font-size: clamp(40px, 12vw, 80px); }
+      .sv-tagline { margin-top: 48px; padding-bottom: 40px; }
+    }
+
+    @media (max-width: 600px) {
+      .sv-hero { padding: 24px 20px 0; }
+      .sv-tagline { padding: 0 20px 32px; }
+      .sv-back { padding: 24px 20px 56px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <span class="close-btn" onclick="document.getElementById('mobileNav').classList.remove('open')">&times;</span>
+    <a href="collections.html">paintings</a>
+    <a href="services-preview.html">services</a>
+    <a href="about.html">about</a>
+    <a href="contact.html">contact</a>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="index-preview.html" class="sv-logo">solideoglorea</a>
+      <nav class="sv-nav">
+        <a href="collections.html">Paintings</a>
+        <a href="services-preview.html" class="active">Services</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="header-right">
+        <div class="header-social">
+          <a href="https://www.instagram.com/solideoglorea/" target="_blank" title="@solideoglorea">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/>
+              <circle cx="12" cy="12" r="3"/>
+              <circle cx="17" cy="7" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- TYPE BLOCK -->
+  <section class="sv-hero">
+    <div class="sv-hero-inner">
+      <h1 class="sv-headline">
+        <a href="contact-creative-direction.html"><span class="num">01.</span>Creative Direction,</a>
+        <a href="contact.html"><span class="num">02.</span>Social Media Management</a>
+      </h1>
+    </div>
+  </section>
+
+  <!-- TAGLINE + SIGNATURE -->
+  <div class="sv-tagline">
+    <p>established in 2024, working with brands and creatives who care about craft, story, and stewardship.</p>
+    <span class="sv-signature">our services</span>
+  </div>
+
+  <!-- BACK LINK -->
+  <div class="sv-back">
+    <a href="collections.html">← back to <em>paintings</em></a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand-name">solideoglorea</span>
+        <p>Christian abstract art painted from a place of faith, wonder, and a lifelong conversation with God.</p>
+      </div>
+      <div class="footer-col">
+        <h4>navigate</h4>
+        <a href="collections.html">paintings</a>
+        <a href="services-preview.html">services</a>
+        <a href="about.html">about</a>
+        <a href="contact.html">contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>connect</h4>
+        <a href="https://www.instagram.com/solideoglorea/" target="_blank" class="footer-social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3Z"/>
+            <path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7"/>
+            <path d="M14.5 17.5 4.5 15"/>
+          </svg>
+          <span style="opacity:0;pointer-events:none">art</span>
+        </a>
+        <a href="https://www.instagram.com/ellierinella/" target="_blank" class="footer-social-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <circle cx="12" cy="12" r="3"/>
+            <circle cx="17" cy="7" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+          <span style="opacity:0;pointer-events:none">personal</span>
+        </a>
+        <a href="mailto:me@ellierinella.com">me@ellierinella.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; ellie rinella 2025. all rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
